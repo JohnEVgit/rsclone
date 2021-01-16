@@ -1,0 +1,56 @@
+.main-instruction {
+  position: absolute;
+  left: 5%;
+  top: 2%;
+  background-color: #828282;
+  color: #695a5f;
+  text-transform: uppercase;
+  padding: 0.4% 3.5% 0.5% 1%;
+}
+
+.main-instruction::before {
+  content: '';
+  position: absolute;
+  width: 4%;
+  right: 1%;
+  top: 10%;
+  bottom: 10%;
+  background: #828282;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(17%, #828282), color-stop(17%, #695a5f), color-stop(19%, #695a5f), color-stop(19%, #828282), color-stop(25%, #828282), color-stop(25%, #695a5f), color-stop(27%, #695a5f), color-stop(27%, #828282), color-stop(29%, #828282), color-stop(29%, #695a5f), color-stop(31%, #695a5f), color-stop(31%, #828282), color-stop(33%, #828282), color-stop(33%, #695a5f), color-stop(35%, #695a5f), color-stop(35%, #828282), color-stop(41%, #828282), color-stop(41%, #695a5f), color-stop(43%, #695a5f), color-stop(43%, #828282), color-stop(45%, #828282), color-stop(45%, #695a5f), color-stop(47%, #695a5f), color-stop(47%, #828282), color-stop(53%, #828282), color-stop(53%, #695a5f), color-stop(55%, #695a5f), color-stop(55%, #828282), color-stop(57%, #828282), color-stop(57%, #695a5f), color-stop(59%, #695a5f), color-stop(59%, #828282), color-stop(65%, #828282), color-stop(65%, #695a5f), color-stop(67%, #695a5f), color-stop(67%, #828282), color-stop(69%, #828282), color-stop(69%, #695a5f), color-stop(71%, #695a5f), color-stop(71%, #828282), color-stop(73%, #828282), color-stop(73%, #695a5f), color-stop(75%, #695a5f), color-stop(75%, #828282), color-stop(81%, #828282), color-stop(81%, #695a5f), color-stop(83%, #695a5f), color-stop(83%, #828282));
+  background: linear-gradient(180deg, #828282 17%, #695a5f 17%, #695a5f 19%, #828282 19%, #828282 25%, #695a5f 25%, #695a5f 27%, #828282 27%, #828282 29%, #695a5f 29%, #695a5f 31%, #828282 31%, #828282 33%, #695a5f 33%, #695a5f 35%, #828282 35%, #828282 41%, #695a5f 41%, #695a5f 43%, #828282 43%, #828282 45%, #695a5f 45%, #695a5f 47%, #828282 47%, #828282 53%, #695a5f 53%, #695a5f 55%, #828282 55%, #828282 57%, #695a5f 57%, #695a5f 59%, #828282 59%, #828282 65%, #695a5f 65%, #695a5f 67%, #828282 67%, #828282 69%, #695a5f 69%, #695a5f 71%, #828282 71%, #828282 73%, #695a5f 73%, #695a5f 75%, #828282 75%, #828282 81%, #695a5f 81%, #695a5f 83%, #828282 83%);
+  border-left: 0.2vw solid #695a5f;
+  border-right: 0.2vw solid #695a5f;
+  -o-border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
+  border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(105, 90, 95, 0)), color-stop(17%, #695a5f), color-stop(83%, #695a5f), to(rgba(105, 90, 95, 0))) 1 100%;
+  border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
+}
+
+.main-instruction-title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.main-instruction-point {
+  margin: 0;
+  font-size: 1.1vw;
+}
+
+.main-instruction-point-numbers {
+  letter-spacing: -0.05em;
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .main-instruction::before {
+    border-left: 0.35555556vh solid #695a5f;
+    border-right: 0.35555556vh solid #695a5f;
+  }
+
+  .main-instruction-title {
+    font-size: 2.66666667vh;
+  }
+
+  .main-instruction-point {
+    font-size: 1.95555556vh;
+  }
+}

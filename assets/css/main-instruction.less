@@ -1,0 +1,62 @@
+
+
+.main-instruction {
+  position: absolute;
+  left: 5%;
+  top: 2%;
+  background-color: #828282;
+  color: #695a5f;
+  text-transform: uppercase;
+  padding: 0.4% 3.5% 0.5% 1%;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 4%;
+    right: 1%;
+    top: 10%;
+    bottom: 10%;
+    background: rgb(130,130,130);
+    background: linear-gradient(180deg, rgba(130,130,130,1) 17%, rgba(105,90,95,1) 17%, rgba(105,90,95,1) 19%, rgba(130,130,130,1) 19%, rgba(130,130,130,1) 25%, rgba(105,90,95,1) 25%, rgba(105,90,95,1) 27%, rgba(130,130,130,1) 27%, rgba(130,130,130,1) 29%, rgba(105,90,95,1) 29%, rgba(105,90,95,1) 31%, rgba(130,130,130,1) 31%, rgba(130,130,130,1) 33%, rgba(105,90,95,1) 33%, rgba(105,90,95,1) 35%, rgba(130,130,130,1) 35%, rgba(130,130,130,1) 41%, rgba(105,90,95,1) 41%, rgba(105,90,95,1) 43%, rgba(130,130,130,1) 43%, rgba(130,130,130,1) 45%, rgba(105,90,95,1) 45%, rgba(105,90,95,1) 47%, rgba(130,130,130,1) 47%, rgba(130,130,130,1) 53%, rgba(105,90,95,1) 53%, rgba(105,90,95,1) 55%, rgba(130,130,130,1) 55%, rgba(130,130,130,1) 57%, rgba(105,90,95,1) 57%, rgba(105,90,95,1) 59%, rgba(130,130,130,1) 59%, rgba(130,130,130,1) 65%, rgba(105,90,95,1) 65%, rgba(105,90,95,1) 67%, rgba(130,130,130,1) 67%, rgba(130,130,130,1) 69%, rgba(105,90,95,1) 69%, rgba(105,90,95,1) 71%, rgba(130,130,130,1) 71%, rgba(130,130,130,1) 73%, rgba(105,90,95,1) 73%, rgba(105,90,95,1) 75%, rgba(130,130,130,1) 75%, rgba(130,130,130,1) 81%, rgba(105,90,95,1) 81%, rgba(105,90,95,1) 83%, rgba(130,130,130,1) 83%);
+    border-left: 0.2vw solid #695a5f;
+    border-right: 0.2vw solid #695a5f;
+    border-image:
+            linear-gradient(
+                    to bottom,
+                    rgba(105,90,95, 0) 0%,
+                    rgba(105,90,95, 1) 17%,
+                    rgba(105,90,95, 1) 83%,
+                    rgba(105,90,95, 0) 100%,
+            ) 1 100%;
+  }
+}
+.main-instruction-title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5vw;
+}
+.main-instruction-point {
+  margin: 0;
+  font-size: 1.1vw;
+}
+.main-instruction-point-numbers {
+  letter-spacing: -0.05em;
+}
+
+
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+
+  .main-instruction {
+    &::before {
+      border-left: 0.35555555555vh solid #695a5f;
+      border-right: 0.35555555555vh solid #695a5f;
+    }
+  }
+  .main-instruction-title {
+    font-size: 2.6666666666vh;
+  }
+  .main-instruction-point {
+    font-size: 1.95555555555vh;
+  }
+
+}

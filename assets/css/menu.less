@@ -1,0 +1,312 @@
+
+.open-menu-btn {
+  position: absolute;
+  left: 1%;
+  top: 2%;
+  width: 2.7%;
+  height: 4.7%;
+  border: 0.23vw solid #264a2d;
+  background: #1c241b;
+  padding: 0;
+  outline: none;
+}
+
+.body-menu-opened::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(28, 36, 27, 0.7);
+  z-index: 100;
+  .menu-wrap {
+    display: flex;
+  }
+}
+
+.menu-wrap {
+  position: absolute;
+  left: 1%;
+  top: 2%;
+  z-index: 200;
+  background: #1c241b;
+  border: 0.23vw solid #264a2d;
+  width: 31.8%;
+  display: none;
+  justify-content: space-between;
+}
+.menu-list {
+  margin: 0;
+  padding: 0.8vw 0.8vw 0.3vw;
+  list-style: none;
+}
+.menu-list-elem {
+  margin-bottom: 0.5vw;
+  line-height: 0em;
+}
+.menu-btn {
+  background: #1c241b;
+  border: 0.2vw solid #264a2d;
+  color: #84b384;
+  text-shadow: 0.1vw 0.1vw 0 #264a2d;
+  text-transform: uppercase;
+  padding: 0.15vw 0.2vw;
+  font-size: 1.8vw;
+  outline: none;
+  transition: border-color 0.2s ease-in-out,
+  color 0.2s ease-in-out,
+  background-color 0.2s ease-in-out,
+  text-shadow 0.2s ease-in-out;
+  &:hover {
+    border-color: #2c7440;
+    color: #b5eac5;
+    background-color: #264a2d;
+    text-shadow: 0.1vw 0.1vw 0 #2c7440;
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.menu-volume-block {
+  border-left: 0.23vw solid #264a2d;
+  width: 2vw;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-volume {
+  appearance: none;
+  width: 770%;
+  height: 2vw;
+  margin-top: 718%;
+  transform: rotate(270deg);
+  transform-origin: left;
+  margin-left: 50%;
+}
+.menu-volume:focus {
+  outline: none;
+}
+.menu-volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2vw;
+  cursor: pointer;
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  background: #84b384;
+  border-radius: 0;
+  border: 0 solid #000101;
+}
+.menu-volume::-webkit-slider-thumb {
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  border: 0 solid #000000;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 0;
+  background: #1c241b;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.menu-volume:focus::-webkit-slider-runnable-track {
+  background: #84b384;
+}
+.menu-volume::-moz-range-track {
+  width: 100%;
+  height: 2vw;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  background: #84b384;
+  border-radius: 0;
+  border: 0 solid #000101;
+}
+.menu-volume::-moz-range-thumb {
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  border: 0 solid #000000;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 0;
+  background: #1c241b;
+  cursor: pointer;
+}
+.menu-volume::-ms-track {
+  width: 100%;
+  height: 2vw;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 2vw 0;
+  color: transparent;
+}
+.menu-volume::-ms-fill-lower {
+  background: #84b384;
+  border: 0 solid #000101;
+  border-radius: 0;
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+}
+.menu-volume::-ms-fill-upper {
+  background: #84b384;
+  border: 0 solid #000101;
+  border-radius: 0;
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+}
+.menu-volume::-ms-thumb {
+  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  border: 0 solid #000000;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 0;
+  background: #1c241b;
+  cursor: pointer;
+}
+.menu-volume:focus::-ms-fill-lower {
+  background: #84b384;
+}
+.menu-volume:focus::-ms-fill-upper {
+  background: #84b384;
+}
+
+
+.menu-volume-icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.8vw;
+  background: #264a2d;
+}
+
+.menu-volume-music,
+.menu-volume-music::after,
+.menu-volume-music::before {
+  display: block;
+  box-sizing: border-box;
+  border: 0.104166666vw solid
+}
+.menu-volume-music {
+  position: absolute;
+  left: 0.104166666vw;
+  right: 0;
+  top: 0;
+  bottom: 0.104166666vw;
+  margin: auto;
+  border-top-left-radius: 0.20833333vw;
+  border-top-right-radius: 0.20833333vw;
+  border-bottom: 0;
+  transform: skewY(-15deg);
+  width: 0.729166666vw;
+  height: 0.83333333vw;
+  color: #84b384;
+}
+.menu-volume-music::after,
+.menu-volume-music::before {
+  content: "";
+  position: absolute;
+  width: 0.364583333vw;
+  height: 0.364583333vw;
+  top: 0.46875vw;
+  left: -0.364583333vw;
+  transform: skewY(15deg);
+  border-radius: 0.52083333vw;
+}
+.menu-volume-music::after {
+  left: 0.260416666vw
+}
+
+
+
+
+
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+
+  .menu-wrap {
+    border: 0.4088888vh solid #264a2d;
+  }
+  .menu-list {
+    padding: 1.422222222vh 1.422222222vh 0.533333333vh;
+  }
+  .menu-list-elem {
+    margin-bottom: 0.88888888888vh;
+  }
+  .menu-btn {
+    border: 0.3555555555vh solid #264a2d;
+    text-shadow: 0.1777777777vh 0.1777777777vh 0 #264a2d;
+    padding: 0.266666666vh 0.3555555555vh;
+    font-size: 3.2vh;
+  }
+
+  .menu-volume-block {
+    border-left: 0.4088888vh solid #264a2d;
+    width: 3.555555555vh;
+  }
+  .menu-volume {
+    height: 3.55555556vh;
+  }
+  .menu-volume::-webkit-slider-runnable-track {
+    height: 3.555555555vh;
+  }
+  .menu-volume::-webkit-slider-thumb {
+    height: 3.555555555vh;
+    width: 3.555555555vh;
+  }
+  .menu-volume::-moz-range-track {
+    height: 3.555555555vh;
+  }
+  .menu-volume::-moz-range-thumb {
+    height: 3.555555555vh;
+    width: 3.555555555vh;
+  }
+  .menu-volume::-ms-track {
+    height: 3.555555555vh;
+    border-width: 3.555555555vh 0;
+  }
+  .menu-volume::-ms-thumb {
+    height: 3.555555555vh;
+    width: 3.555555555vh;
+  }
+
+
+  .menu-volume-icon {
+    height: 3.2vh;
+  }
+  .menu-volume-music,
+  .menu-volume-music::after,
+  .menu-volume-music::before {
+    border: 0.185185185vh solid;
+  }
+  .menu-volume-music {
+    left: 0.185185185vh;
+    bottom: 0.185185185vh;
+    border-top-left-radius: 0.37037037vh;
+    border-top-right-radius: 0.37037037vh;
+    border-bottom: 0;
+    width: 1.296296296vh;
+    height: 1.48148148vh;
+  }
+  .menu-volume-music::after,
+  .menu-volume-music::before {
+    width: 0.648148147vh;
+    height: 0.648148147vh;
+    top: 0.83333333333vh;
+    left: -0.648148147vh;
+    border-radius: 0.92592592vh;
+  }
+  .menu-volume-music::after {
+    left: 0.46296296vh;
+  }
+
+}
+
+
+
+

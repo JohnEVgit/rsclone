@@ -1,4 +1,287 @@
 @import (less) "normalize.css";
 @import (less) "main.css";
 
+html {
+  min-height: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Arial Black', sans-serif;
+  background-color: rgba(41,49,52,1);
+  background-image: linear-gradient(180deg, rgba(41,49,52,1) 0%,
+  rgba(41,49,52,1) 81.4%,
+  rgba(63,77,84,1) 81.4%,
+  rgba(63,77,84,1) 81.7%,
+  rgba(41,49,52,1) 81.7%,
+  rgba(41,49,52,1) 83.7%,
+  rgba(63,77,84,1) 83.7%,
+  rgba(63,77,84,1) 84%,
+  rgba(41,49,52,1) 84%,
+  rgba(41,49,52,1) 84.5%,
+  rgba(63,77,84,1) 84.5%,
+
+  rgba(63,77,84,1) 84.7%,
+  rgba(41,49,52,1) 84.7%,
+  rgba(41,49,52,1) 85.1%,
+  rgba(63,77,84,1) 85.1%,
+
+  rgba(63,77,84,1) 85.4%,
+  rgba(41,49,52,1) 85.4%,
+  rgba(41,49,52,1) 85.7%,
+  rgba(63,77,84,1) 85.7%,
+
+  rgba(63,77,84,1) 86%,
+  rgba(41,49,52,1) 86%,
+  rgba(41,49,52,1) 86.3%,
+  rgba(63,77,84,1) 86.3%,
+
+  rgba(63,77,84,1) 87%,
+  rgba(41,49,52,1) 87%,
+  rgba(41,49,52,1) 87.3%,
+  rgba(63,77,84,1) 87.3%,
+  rgba(63,77,84,1) 89%,
+  rgba(41,49,52,1) 89%,
+  rgba(41,49,52,1) 89.3%,
+  rgba(63,77,84,1) 89.3%);
+}
+
+button {
+  appearance: none;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.main-cont {
+  width: 100%;
+  height: calc(100vw / 1.77777778);
+  position: relative;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: 0 0 0 1px red;
+}
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .main-cont {
+    width: calc(100vh * 1.77777778);
+    height: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.achievement-elem {
+  position: absolute;
+  background-color: #2C3339;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.8%;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+  color: transparent;
+  line-height: 1.3em;
+  &.active {
+    background-color: #B0B3B5;
+    color: #222;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 25%;
+      margin: auto;
+      width: 2vw;
+      height: 0.75vw;
+      transform: rotate(-45deg);
+      border-left: 0.3vw solid #264a2d;
+      border-bottom: 0.3vw solid #264a2d;
+    }
+  }
+}
+
+.achievement-elem1 {
+  width: 6%;
+  height: 14%;
+  left: 3%;
+  top: 39%;
+  transform: rotate(4deg);
+}
+.achievement-elem2 {
+  width: 6%;
+  height: 14%;
+  right: 2%;
+  top: 3%;
+  transform: rotate(2deg);
+}
+.achievement-elem3 {
+  width: 6%;
+  height: 14%;
+  right: 10%;
+  top: 4%;
+  transform: rotate(-2deg);
+}
+.achievement-elem4 {
+  width: 8%;
+  height: 10%;
+  right: 20%;
+  top: 5%;
+  transform: rotate(2deg);
+}
+.achievement-elem5 {
+  width: 6%;
+  height: 14%;
+  right: 22%;
+  top: 22%;
+  transform: rotate(-2deg);
+}
+
+.achievement-elem6 {
+  width: 6%;
+  height: 14%;
+  right: 14%;
+  top: 24%;
+  transform: rotate(2deg);
+}
+.achievement-elem7 {
+  width: 8%;
+  height: 10%;
+  right: 3%;
+  top: 25%;
+  transform: rotate(2deg);
+}
+.achievement-elem8 {
+  width: 6%;
+  height: 14%;
+  right: 5%;
+  top: 40%;
+  transform: rotate(-2deg);
+}
+.achievement-elem9 {
+  width: 8%;
+  height: 10%;
+  left: 7%;
+  top: 25%;
+  transform: rotate(1deg);
+}
+.achievement-elem10 {
+  width: 8%;
+  height: 10%;
+  left: 18%;
+  top: 24%;
+  transform: rotate(-4deg);
+}
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+
+  .achievement-elem {
+    font-size: 1.422222222vh;
+    &.active {
+      &::before {
+        width: 3.555555555vh;
+        height: 1.3333333333vh;
+        border-left: 0.5333333333vh solid #264a2d;
+        border-bottom: 0.5333333333vh solid #264a2d;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+.main-table {
+  position: absolute;
+  width: 71%;
+  height: 59%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 0.3vw;
+  background: linear-gradient(180deg, #fff 0%,
+  #fff 60%,
+  #fff 60%,
+  rgba(99, 112, 121, 0) 100%);
+  padding: 1px 2px 0;
+}
+
+
+
+
+
+
+
+
+.main-table-top {
+  height: 72%;
+  background: #B0B3B5;
+  border-radius: 0.3vw;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-table-bottom {
+  height: 28%;
+  border-top: 2px solid #fff;
+  background-color: #637079;
+  border-radius: 0.3vw;
+  position: relative;
+  background-image: linear-gradient(180deg, #637079 0%,
+  #637079 78%,
+  rgba(63,77,84,1) 78%,
+  rgba(63,77,84,1) 80%,
+  #637079 80%,
+  #637079 84%,
+  rgba(63,77,84,1) 84%,
+  rgba(63,77,84,1) 87%,
+  #637079 87%,
+  #637079 90%,
+  rgba(63,77,84,1) 90%);
+}
+
+@import "menu";
+@import "main-instruction";
+@import "main-screen";
+@import "main-btn";
+@import "main-progress";
+@import "reset-btn";
+
 @import (less) "main-footer.css";

@@ -1,0 +1,136 @@
+
+.reset-btn-cont {
+  position: absolute;
+  width: 9%;
+  height: 62%;
+  left: 0;
+  right: 0;
+  top: -10%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 0.3vw 0.3vw 0.4vw 0.4vw;
+  background: #637079;
+}
+
+.reset-btn-text {
+  position: absolute;
+  width: 9%;
+  left: 0;
+  right: 0;
+  top: -26%;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: #6E2A3D;
+  font-size: 1.0125vw;
+}
+
+
+.reset-btn-block {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.3vw 0.3vw 0.4vw 0.4vw;
+  border: 2px solid #fff;
+  border-bottom: 1vw solid #B0B3B5;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4.6vw 0 0 2.8vw;
+    border-color: transparent transparent transparent #3F4D54;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background: #868D9D;
+    bottom: -1vw;
+    left: 0;
+    height: 1vw;
+    width: 46%;
+    border-radius: 0 0 0 0.3vw;
+  }
+}
+.reset-btn-block-shadow {
+  position: absolute;
+  width: 9%;
+  left: 2px;
+  border: 2px solid transparent;
+  border-bottom: 1vw solid #637079;
+  border-right-color: #637079;
+  top: calc(12% + 2px);
+  bottom: -20%;
+  background: transparent;
+  transform: translateX(-100%);
+  z-index: 2;
+}
+
+.reset-btn {
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  z-index: 2;
+  outline: none;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #13211A;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    height: 20%;
+    width: 80%;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background: #6E2A3D;
+    box-shadow: 0 0.3vw 0 0 #13211A, 0.4vw 0.4vw 0.5vw #3F4D54;
+    transition: top 0.2s ease-in-out;
+  }
+  &:active::after {
+    top: 80%;
+  }
+}
+
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+
+  .reset-btn-text {
+    font-size: 1.8vh;
+  }
+  .reset-btn-block {
+    border-bottom: 1.77777777vh solid #B0B3B5;
+    &::before {
+      border-width: 8.22222222vh 0 0 5.033333333vh;
+    }
+    &::after {
+      bottom: -1.77777777vh;
+      height: 1.77777777vh;
+    }
+  }
+
+}
+
