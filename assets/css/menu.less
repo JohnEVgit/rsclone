@@ -9,17 +9,20 @@
   background: #1c241b;
   padding: 0;
   outline: none;
+  z-index: 50000;
 }
 
-.body-menu-opened::before {
-  content: '';
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(28, 36, 27, 0.7);
-  z-index: 100;
+.body-menu-opened {
+  &::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(28, 36, 27, 0.7);
+    z-index: 40000;
+  }
   .menu-wrap {
     display: flex;
   }
@@ -29,7 +32,7 @@
   position: absolute;
   left: 1%;
   top: 2%;
-  z-index: 200;
+  z-index: 50000;
   background: #1c241b;
   border: 0.23vw solid #264a2d;
   width: 31.8%;

@@ -9,7 +9,6 @@
     "gulp-task-listing": "^1"
   },
   "devDependencies": {
-    "eslint": "^7.17.0",
     "gulp-autoprefixer": "^7",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",

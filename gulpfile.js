@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const exec = require('child_process').exec;
 const taskListing = require('gulp-task-listing');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');

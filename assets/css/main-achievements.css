@@ -1,0 +1,143 @@
+.achievement-elem {
+  position: absolute;
+  background-color: #2C3339;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 0.8%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+  color: transparent;
+  line-height: 1.3em;
+}
+
+.achievement-elem.active {
+  background-color: #B0B3B5;
+  color: #222;
+}
+
+.achievement-elem.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;
+  margin: auto;
+  width: 2vw;
+  height: 0.75vw;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  border-left: 0.3vw solid #264a2d;
+  border-bottom: 0.3vw solid #264a2d;
+}
+
+.achievement-elem1 {
+  width: 6%;
+  height: 14%;
+  left: 3%;
+  top: 39%;
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+
+.achievement-elem2 {
+  width: 6%;
+  height: 14%;
+  right: 2%;
+  top: 3%;
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.achievement-elem3 {
+  width: 6%;
+  height: 14%;
+  right: 10%;
+  top: 4%;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.achievement-elem4 {
+  width: 8%;
+  height: 10%;
+  right: 20%;
+  top: 5%;
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.achievement-elem5 {
+  width: 6%;
+  height: 14%;
+  right: 22%;
+  top: 22%;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.achievement-elem6 {
+  width: 6%;
+  height: 14%;
+  right: 14%;
+  top: 24%;
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.achievement-elem7 {
+  width: 8%;
+  height: 10%;
+  right: 3%;
+  top: 25%;
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.achievement-elem8 {
+  width: 6%;
+  height: 14%;
+  right: 5%;
+  top: 40%;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.achievement-elem9 {
+  width: 8%;
+  height: 10%;
+  left: 7%;
+  top: 25%;
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+
+.achievement-elem10 {
+  width: 8%;
+  height: 10%;
+  left: 18%;
+  top: 24%;
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .achievement-elem {
+    font-size: 1.42222222vh;
+  }
+
+  .achievement-elem.active::before {
+    width: 3.55555556vh;
+    height: 1.33333333vh;
+    border-left: 0.53333333vh solid #264a2d;
+    border-bottom: 0.53333333vh solid #264a2d;
+  }
+}
