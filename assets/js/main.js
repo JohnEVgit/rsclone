@@ -16,8 +16,16 @@ const config = {
     mainBtnElem: document.querySelector('.main-btn'),
     resetBtnElem: document.querySelector('.reset-btn'),
     menuBtnsList: document.querySelectorAll('.menu-btn'),
-
     waitPeacefulEnding: null,
+
+    volume: localStorage.getItem('volume') ? localStorage.getItem('volume') : 0.8,
+    volumeElem: document.querySelector('.menu-volume'),
+    audio: null,
+    audioStart: './assets/audio/pdta-start.mp3',
+    audioMain: './assets/audio/pdta-main.mp3',
+    audioEnding: './assets/audio/pdta-ending.mp3',
+    audioRobot: './assets/audio/pdta-ending.mp3',
+
     lang: {
         en: {
             startDialog: [
@@ -94,6 +102,9 @@ const showFirstScreen = () => {
 
 const init = () => {
 
+    initAudio();
+
+
     if (!localStorage.getItem('gameLanguage')) {
         chooseLanguage(false);
     } else {
@@ -109,6 +120,7 @@ const init = () => {
 
     showAchievements();
     menuEvents();
+    mainBtnEvents();
     resetGame();
 };
 
@@ -180,6 +192,14 @@ const menuEvents = () => {
     document.querySelector('.menu-btn-quite-js').addEventListener('click', function () {
         window.close();
     });
+    config.volumeElem.addEventListener('input', function () {
+        const valueNum = this.value / 10;
+
+        config.audio.volume = valueNum;
+        config.volume = valueNum;
+        localStorage.setItem('volume', valueNum);
+    });
+
 };
 
 const showFullscreen = () => {
@@ -299,10 +319,15 @@ const waitPeacefulEnding = () => {
 const resetGame = () => {
     config.resetBtnElem.addEventListener('click', function () {
         config.resetBtnCount = 0;
+        config.mainBtnCount = 0;
         config.bodyElem.classList.remove('disabled-btns-when-achievement');
         config.mainBtnElem.disabled = false;
         clearTimeout(config.waitPeacefulEnding);
         waitPeacefulEnding();
+
+        pauseAudio();
+        config.audio.src = config.audioStart;
+        config.audio.play();
     });
 };
 
@@ -319,7 +344,7 @@ const getAchievement = (number) => {
     achievementProgress.classList.add('active');
 
     if (config.achievementList) {
-        if (config.achievementList.split(',').indexOf(number) != -1) {
+        if (config.achievementList.split(',').indexOf(number.toString()) == -1) {
             config.achievementList += ',' + number;
             config.achievementCount++;
         }
@@ -377,6 +402,43 @@ const clearConfig = () => {
 const blockBtns = () => {
     config.bodyElem.classList.add('disabled-btns-when-achievement');
     config.mainBtnElem.disabled = true;
+};
+
+
+const initAudio = () => {
+    config.audio = new Audio(config.audioStart);
+    config.audio.loop = true;
+    config.audio.volume = config.volume;
+
+    config.volumeElem.value = config.volume * 10;
+    config.audio.play();
+};
+
+const pauseAudio = () => {
+    config.audio.pause();
+    config.audio.currentTime = 0;
+};
+
+
+const mainBtnEvents = () => {
+    config.mainBtnElem.addEventListener('click', function () {
+
+        config.mainBtnCount++;
+
+        if (config.mainBtnCount === 1) {
+            clearTimeout(config.waitPeacefulEnding);
+            pauseAudio();
+            config.audio.src = config.audioMain;
+            config.audio.play();
+        }
+
+        if (config.mainBtnCount === 20) {
+            pauseAudio();
+            config.audio.src = config.audioEnding;
+            config.audio.play();
+            getAchievement(2);
+        }
+    });
 };
 
 showFirstScreen();
