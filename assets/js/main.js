@@ -26,6 +26,8 @@ const config = {
     audioEnding: './assets/audio/pdta-ending.mp3',
     audioRobot: './assets/audio/pdta-ending.mp3',
 
+    isMushroomBtnSwitch: false,
+
     lang: {
         en: {
             startDialog: [
@@ -313,15 +315,16 @@ const waitPeacefulEnding = () => {
             getAchievement(1);
             runDialog(config.peacefulEndingDialogClass);
         }
-    }, 60000);
+    }, 600000000);
 };
 
 const resetGame = () => {
     config.resetBtnElem.addEventListener('click', function () {
         config.resetBtnCount = 0;
         config.mainBtnCount = 0;
-        config.bodyElem.classList.remove('disabled-btns-when-achievement');
+        config.bodyElem.className = '';
         config.mainBtnElem.disabled = false;
+        config.isMushroomBtnSwitch = false;
         clearTimeout(config.waitPeacefulEnding);
         waitPeacefulEnding();
 
@@ -430,6 +433,12 @@ const mainBtnEvents = () => {
             pauseAudio();
             config.audio.src = config.audioMain;
             config.audio.play();
+            showMushroomBtn();
+        }
+
+        if (config.isMushroomBtnSwitch) {
+            getAchievement(3);
+            config.bodyElem.classList.remove('body-mushroom-btn-active', 'body-mushroom-btn-show');
         }
 
         if (config.mainBtnCount === 20) {
@@ -438,6 +447,14 @@ const mainBtnEvents = () => {
             config.audio.play();
             getAchievement(2);
         }
+    });
+};
+
+const showMushroomBtn = () => {
+    config.bodyElem.classList.add('body-mushroom-btn-show');
+    document.querySelector('.mushroom-btn-block').addEventListener('click', function () {
+        config.bodyElem.classList.add('body-mushroom-btn-active');
+        config.isMushroomBtnSwitch = true;
     });
 };
 
