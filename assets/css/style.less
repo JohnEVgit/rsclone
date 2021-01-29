@@ -103,6 +103,12 @@ button {
     color: #BF3530;
   }
 }
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .first-screen {
+    font-size: 3.55555555vh;
+  }
+}
+
 
 
 .choose-language {
@@ -149,6 +155,18 @@ button {
 .choose-language-elem input:checked + .choose-language-label {
   border-color: #b5eac5;
 }
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .choose-language {
+    font-size: 3.55555555vh;
+  }
+  .choose-language-title {
+    margin: 0.3555555vh 0 0;
+  }
+  .choose-language-label {
+    padding: 0.888888888vh 2.6666666vh 1.066666666vh;
+    border: 0.71111111vh solid #264a2d;
+  }
+}
 
 
 
@@ -179,76 +197,6 @@ button {
 
 
 
-.dialog-block {
-  content: '';
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(28, 36, 27, 0.7);
-  z-index: 60000;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-.dialog {
-  text-transform: uppercase;
-  padding: 0.5% 1%;
-  font-size: 2vw;
-  background: #d3d7e0;
-  line-height: 1.2em;
-  margin: 0 0.8em 0.5em;
-  position: relative;
-  &::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    position: absolute;
-    bottom: 15%;
-  }
-  &::after {
-    content: attr(data-text);
-    opacity: 0;
-  }
-  span {
-    position: absolute;
-  }
-}
-.dialog-left::before {
-  border-width: 0 0 1.1vw 1.3vw;
-  border-color: transparent transparent #d3d7e0 transparent;
-  left: 0;
-  transform: translateX(-100%);
-  margin-left: 1px;
-}
-.dialog-right {
-  align-self: flex-end;
-  &::before {
-    border-width: 1.1vw 0 0 1.3vw;
-    border-color: transparent transparent transparent #d3d7e0;
-    right: 0;
-    left: auto;
-    transform: translateX(100%);
-    margin-right: 1px;
-  }
-}
-
-@media screen and (min-aspect-ratio: ~'16/9') {
-
-  .dialog {
-    font-size: 3.55555555555vh;
-  }
-  .dialog-left::before {
-    border-width: 0 0 1.955555555vh 2.311111111vh;
-  }
-  .dialog-right::before {
-    border-width: 1.955555555vh 0 0 2.311111111vh;
-  }
-
-}
 
 
 
@@ -273,6 +221,12 @@ button {
   rgba(99, 112, 121, 0) 100%);
   padding: 1px 2px 0;
 }
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .main-table {
+    border-radius: 0.533333333vh;
+  }
+}
+
 
 
 
@@ -287,6 +241,29 @@ button {
   border-radius: 0.3vw;
   position: relative;
 }
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .main-table-top {
+    border-radius: 0.533333333vh;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -318,8 +295,16 @@ button {
   #637079 90%,
   rgba(63,77,84,1) 90%);
 }
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .main-table-bottom {
+    border-radius: 0.533333333vh;
+  }
+}
 
 @import "menu";
+
+@import "dialog";
+
 @import "main-achievements";
 @import "main-instruction";
 @import "main-screen";
@@ -327,6 +312,11 @@ button {
 @import "main-progress";
 
 @import "mushroom-btn";
+@import "roman-btns";
+@import "switch-second";
+@import "ddit-btns";
+@import "bender-btns";
+@import "counter-btn";
 
 @import "reset-btn";
 
