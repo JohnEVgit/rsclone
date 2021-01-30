@@ -157,7 +157,8 @@
 
 .screen-bottom-roman-numbers,
 .screen-bottom-ddit-numbers,
-.screen-bottom-bender-numbers {
+.screen-bottom-bender-numbers,
+.screen-bottom-color-numbers {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -171,7 +172,8 @@
 
 .screen-bottom-roman-numbers span,
 .screen-bottom-ddit-numbers span,
-.screen-bottom-bender-numbers span {
+.screen-bottom-bender-numbers span,
+.screen-bottom-color-numbers span {
   color: #739c63;
   margin-right: 0.4em;
   font-weight: bold;
@@ -182,10 +184,15 @@
 
 .body-roman-numbers-show .screen-bottom-roman-numbers,
 .body-ddit-numbers-show .screen-bottom-ddit-numbers,
+.body-color-numbers-show .screen-bottom-color-numbers,
 .body-bender-numbers-show .screen-bottom-bender-numbers {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+.body-main-screen-crush .main-screen {
+  background: red;
 }
 
 @media screen and (min-aspect-ratio: 16/9) {

@@ -110,7 +110,7 @@
   transform-origin: right top;
 }
 
-.icon-arrow-right-up {
+.icon-arrow-left-up {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   margin-right: 0.3125vw;
@@ -161,7 +161,7 @@
     width: 1.38888889vh;
   }
 
-  .icon-arrow-right-up {
+  .icon-arrow-left-up {
     margin-right: 0.55555556vh;
   }
 }

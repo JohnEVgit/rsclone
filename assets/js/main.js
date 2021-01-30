@@ -46,6 +46,13 @@ const config = {
     counterBtnDozens: document.querySelector('.counter-btn-number-val.dozens'),
     counterBtnHundreds: document.querySelector('.counter-btn-number-val.hundreds'),
 
+    screwdriverElem: document.querySelector('.screwdriver-elem'),
+    hammerElem: document.querySelector('.hammer-elem'),
+    currentDroppable: null,
+
+    isColorBtnStart: false,
+    colorBtnCod: [],
+
     lang: {
         en: {
             startDialog: [
@@ -489,6 +496,13 @@ const mainEvents = () => {
     document.querySelector('.counter-btn-addone').addEventListener('click', function () {
         activeCounterBtnAddone();
     });
+
+    document.querySelectorAll('.color-btn').forEach(function (elem) {
+        elem.addEventListener('click', function () {
+            activeColorBtns(this);
+        })
+    });
+
 };
 const clearBodyClassList = () => {
     let classListArr = config.bodyElem.classList;
@@ -515,6 +529,12 @@ const mainBtnEvent = () => {
             break;
         case 2:
             config.bodyElem.classList.add('body-roman-btn-show');
+            break;
+        case 8:
+            config.bodyElem.classList.add('body-screwdriver-block-show');
+            break;
+        case 15:
+            config.bodyElem.classList.add('body-hammer-block-show');
             break;
         case 20:
             pauseAudio();
@@ -545,6 +565,10 @@ const activeRomanBtns = (thisElem) => {
     if (config.isDditBtnStart) {
         config.isDditBtnStart = false;
         config.bodyElem.classList.remove('body-ddit-numbers-show');
+    }
+    if (!config.isColorBtnStart) {
+        config.isColorBtnStart = false;
+        config.bodyElem.classList.remove('body-color-numbers-show');
     }
 
     let btnNumber = +thisElem.dataset.roman;
@@ -589,6 +613,10 @@ const activeBenderBtns = (thisElem) => {
         config.isDditBtnStart = false;
         config.bodyElem.classList.remove('body-ddit-numbers-show');
     }
+    if (!config.isColorBtnStart) {
+        config.isColorBtnStart = false;
+        config.bodyElem.classList.remove('body-color-numbers-show');
+    }
 
     let btnNumber = +thisElem.dataset.bender;
 
@@ -625,6 +653,10 @@ const activeDditBtns = (thisElem) => {
         config.isBenderBtnStart = false;
         config.bodyElem.classList.remove('body-bender-numbers-show');
     }
+    if (!config.isColorBtnStart) {
+        config.isColorBtnStart = false;
+        config.bodyElem.classList.remove('body-color-numbers-show');
+    }
 
     let btnNumber = +thisElem.dataset.ddit;
 
@@ -659,7 +691,7 @@ const activeCounterBtnAddone = () => {
 
 const activeCounterBtnSubmit = () => {
 
-    if (config.counterBtnCount === 26) {
+    if (config.counterBtnCount === 276) {
         clearBodyClassList();
         getAchievement(6);
     }
@@ -670,6 +702,141 @@ const activeCounterBtnSubmit = () => {
     config.counterBtnHundreds.textContent = '0';
 };
 
+
+config.screwdriverElem.onmousedown = function(e) {
+    let shiftX = e.clientX - config.screwdriverElem.getBoundingClientRect().left;
+    let shiftY = e.clientY - config.screwdriverElem.getBoundingClientRect().top;
+
+    config.screwdriverElem.style.position = 'absolute';
+    config.screwdriverElem.style.zIndex = 1000;
+    config.bodyElem.append(config.screwdriverElem);
+
+    moveAt(e.pageX, e.pageY);
+
+    function moveAt(pageX, pageY) {
+        config.screwdriverElem.style.left = pageX - shiftX + 'px';
+        config.screwdriverElem.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(e) {
+        moveAt(e.pageX, e.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    config.screwdriverElem.onmouseup = function(e) {
+
+        config.screwdriverElem.hidden = true;
+        let elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+        config.screwdriverElem.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.color-btns-outer');
+        if (config.currentDroppable !== droppableBelow) {
+            config.currentDroppable = droppableBelow;
+            if (config.currentDroppable) {
+                config.bodyElem.classList.add('body-color-btns-show');
+            }
+        }
+        document.querySelector('.screwdriver-top-inner').appendChild(config.screwdriverElem);
+        config.screwdriverElem.removeAttribute('style');
+        document.removeEventListener('mousemove', onMouseMove);
+        config.screwdriverElem.onmouseup = null;
+    };
+};
+config.screwdriverElem.ondragstart = function() {
+    return false;
+};
+
+
+config.hammerElem.onmousedown = function(e) {
+    let shiftX = e.clientX - config.hammerElem.getBoundingClientRect().left;
+    let shiftY = e.clientY - config.hammerElem.getBoundingClientRect().top;
+
+    config.hammerElem.style.position = 'absolute';
+    config.hammerElem.style.zIndex = 1000;
+    config.bodyElem.append(config.hammerElem);
+
+    moveAt(e.pageX, e.pageY);
+
+    function moveAt(pageX, pageY) {
+        config.hammerElem.style.left = pageX - shiftX + 'px';
+        config.hammerElem.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(e) {
+        moveAt(e.pageX, e.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    config.hammerElem.onmouseup = function(e) {
+
+        config.hammerElem.hidden = true;
+        let elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+        config.hammerElem.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.main-screen');
+        if (config.currentDroppable !== droppableBelow) {
+            config.currentDroppable = droppableBelow;
+            if (config.currentDroppable) {
+                clearBodyClassList();
+                config.bodyElem.classList.add('body-main-screen-crush');
+                getAchievement(7);
+            }
+        }
+        document.querySelector('.hammer-top-inner').appendChild(config.hammerElem);
+        config.hammerElem.removeAttribute('style');
+        document.removeEventListener('mousemove', onMouseMove);
+        config.hammerElem.onmouseup = null;
+    };
+};
+config.hammerElem.ondragstart = function() {
+    return false;
+};
+
+
+const activeColorBtns = (thisElem) => {
+
+    if (!config.isColorBtnStart) {
+        config.isColorBtnStart = true;
+        config.bodyElem.classList.add('body-color-numbers-show');
+    }
+
+    if (config.isRomanBtnStart) {
+        config.isRomanBtnStart = false;
+        config.bodyElem.classList.remove('body-roman-numbers-show');
+    }
+    if (config.isBenderBtnStart) {
+        config.isBenderBtnStart = false;
+        config.bodyElem.classList.remove('body-bender-numbers-show');
+    }
+    if (config.isDditBtnStart) {
+        config.isDditBtnStart = false;
+        config.bodyElem.classList.remove('body-ddit-numbers-show');
+    }
+
+    let btnNumber = +thisElem.dataset.color;
+
+    config.colorBtnCod.push(btnNumber);
+    document.querySelector('.screen-bottom-color-numbers span:nth-child(' + config.colorBtnCod.length + ')').textContent = '◼';
+    if (config.colorBtnCod.length >= 4) {
+        if (config.colorBtnCod.join() === [1,2,3,3].join()) {
+            clearBodyClassList();
+            getAchievement(8);
+        }
+        config.colorBtnCod = [];
+        setTimeout (() => {
+            document.querySelectorAll('.screen-bottom-color-numbers span').forEach(function (item) {
+                item.textContent = '_'
+            });
+        }, 200);
+    }
+
+};
 
 
 showFirstScreen();

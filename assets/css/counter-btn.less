@@ -11,11 +11,12 @@
   position: absolute;
   right: -14%;
   left: 100%;
-  bottom: 17%;
-  height: 26%;
+  bottom: 19.5%;
+  height: 22%;
   background: #8a8ea3;
   transition: transform 0.4s ease-in-out;
   transform: translateX(-105%);
+  border-radius: 0 0.2vw 0.2vw 0;
   &::before {
     content: '';
     position: absolute;
@@ -31,13 +32,23 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 55%;
+  height: 60%;
   background: #afb3b6;
   border: 0.15vw solid #d3d7e0;
   border-left: none;
   border-radius: 0 0.2vw 0.2vw 0;
   box-sizing: border-box;
   display: flex;
+  &::before {
+    content: '';
+    width: 3%;
+    top: -3%;
+    bottom: -3%;
+    left: 0;
+    background: linear-gradient(to right, rgba(63, 78, 84, 0.8) 0%, rgba(99, 111, 121, 0.8) 100%);
+    position: absolute;
+    z-index: 1;
+  }
 }
 .counter-btn-numbers {
   width: 70%;
@@ -108,17 +119,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 45%;
+  height: 40%;
   background: #636f79;
   border-radius: 0 0 0.2vw 0;
   border-right: 0.15vw solid #8a8ea3;
   border-bottom: 0.15vw solid #293134;
   box-sizing: border-box;
+  &::before {
+    content: '';
+    left: 0;
+    border-style: solid;
+    border-width: 3.25vw 0 0 1.8vw;
+    border-color: transparent transparent transparent #3f4e54;
+    bottom: 0;
+    position: absolute;
+  }
 }
 .counter-btn-text {
   font-size: 1vw;
   color: #3f4e54;
-  transform: translate(-50%) scaleY(1.5) rotate(-15deg);
+  transform: translate(-50%) rotate(-15deg) scaleY(1.5);
   transform-origin: center;
   position: absolute;
   left: 50%;
@@ -139,8 +159,12 @@
 
 @media screen and (min-aspect-ratio: ~'16/9') {
 
+  .counter-btn-block {
+    border-radius: 0 0.35555556vh 0.35555556vh 0;
+  }
   .counter-btn-top {
     border: 0.2666666666vh solid #d3d7e0;
+    border-left: none;
     border-radius: 0 0.355555555vh 0.355555555vh 0;
   }
   .counter-btn-number {
@@ -168,6 +192,9 @@
     border-radius: 0 0 0.355555555vh 0;
     border-right: 0.2666666666vh solid #8a8ea3;
     border-bottom: 0.2666666666vh solid #293134;
+    &::before {
+      border-width: 5.777777777777vh 0 0 3.2vh;
+    }
   }
   .counter-btn-text {
     font-size: 1.777777777vh;
