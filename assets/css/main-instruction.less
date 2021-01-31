@@ -55,7 +55,49 @@
 
 .main-instruction-bottom-block {
   line-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+
+
+
+
+
+.main-instruction-formula {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-transform: none;
+  font-size: 0.9vw;
+}
+.main-instruction-formula-col {
+  text-align: center;
+  line-height: 0;
+  &:first-child {
+    margin-right: 0.2vw;
+  }
+  span {
+    display: block;
+    line-height: 1em;
+    &:first-child {
+      text-decoration: underline;
+      line-height: 1.4em;
+    }
+    sup {
+      font-size: 0.7em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 .main-instruction-icon-arrows {
   display: inline-flex;
   position: relative;
@@ -100,6 +142,13 @@
 .icon-arrow-left-up {
   transform: rotate(-90deg);
   margin-right: 0.3125vw;
+}
+
+.main-instruction-star {
+  text-shadow: 0.15vw 0 0 #86223c, -0.15vw 0 0 #86223c, 0 0.15vw 0 #86223c, 0 -0.15vw 0 #86223c;
+  font-size: 2vw;
+  color: #828282;
+  transform: rotate(10deg);
 }
 
 
@@ -151,6 +200,23 @@
   }
   .icon-arrow-left-up {
     margin-right: 0.55555555555vh;
+  }
+
+
+  .main-instruction-formula {
+    font-size: 1.6vh;
+  }
+  .main-instruction-formula-col {
+    &:first-child {
+      margin-right: 0.355555555555vh;
+    }
+  }
+  .main-instruction-star {
+    text-shadow: 0.26666666vh 0 0 #86223c,
+    -0.26666666vh 0 0 #86223c,
+    0 0.26666666vh 0 #86223c,
+      0 -0.26666666vh 0 #86223c;
+    font-size: 3.55555555vh;
   }
 
 }

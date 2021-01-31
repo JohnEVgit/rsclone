@@ -54,6 +54,50 @@
 
 .main-instruction-bottom-block {
   line-height: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.main-instruction-formula {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+  text-transform: none;
+  font-size: 0.9vw;
+}
+
+.main-instruction-formula-col {
+  text-align: center;
+  line-height: 0;
+}
+
+.main-instruction-formula-col:first-child {
+  margin-right: 0.2vw;
+}
+
+.main-instruction-formula-col span {
+  display: block;
+  line-height: 1em;
+}
+
+.main-instruction-formula-col span:first-child {
+  text-decoration: underline;
+  line-height: 1.4em;
+}
+
+.main-instruction-formula-col span sup {
+  font-size: 0.7em;
 }
 
 .main-instruction-icon-arrows {
@@ -116,6 +160,14 @@
   margin-right: 0.3125vw;
 }
 
+.main-instruction-star {
+  text-shadow: 0.15vw 0 0 #86223c, -0.15vw 0 0 #86223c, 0 0.15vw 0 #86223c, 0 -0.15vw 0 #86223c;
+  font-size: 2vw;
+  color: #828282;
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
 @media screen and (min-aspect-ratio: 16/9) {
   .main-instruction::before {
     border-left: 0.35555556vh solid #695a5f;
@@ -163,5 +215,18 @@
 
   .icon-arrow-left-up {
     margin-right: 0.55555556vh;
+  }
+
+  .main-instruction-formula {
+    font-size: 1.6vh;
+  }
+
+  .main-instruction-formula-col:first-child {
+    margin-right: 0.35555556vh;
+  }
+
+  .main-instruction-star {
+    text-shadow: 0.26666666vh 0 0 #86223c, -0.26666666vh 0 0 #86223c, 0 0.26666666vh 0 #86223c, 0 -0.26666666vh 0 #86223c;
+    font-size: 3.55555555vh;
   }
 }

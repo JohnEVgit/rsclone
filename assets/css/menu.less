@@ -10,6 +10,32 @@
   padding: 0;
   outline: none;
   z-index: 50000;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    background: #84b384;
+  }
+  &::before {
+    left: 25%;
+    bottom: 20%;
+    height: 5%;
+    width: 30%;
+    box-shadow: 0.15vw -1.2vw 0 0.15vw #84b384,
+      0.05vw -0.5vw 0 0.05vw #84b384,
+      -0.05vw -1vw 0 0.15vw #264a2d,
+      -0.15vw -0.35vw 0 0.05vw #264a2d,
+      -0.15vw 0.15vw 0 0 #264a2d;
+  }
+  &::after {
+    left: 70%;
+    bottom: 20%;
+    height: 5%;
+    width: 5%;
+    box-shadow:
+      0.05vw -0.5vw 0 0.05vw #84b384,
+      -0.15vw -0.35vw 0 0.05vw #264a2d,
+      -0.15vw 0.15vw 0 0 #264a2d;
+  }
 }
 
 .body-menu-opened {
@@ -231,6 +257,23 @@
 
 
 @media screen and (min-aspect-ratio: ~'16/9') {
+
+  .open-menu-btn {
+    border: 0.4088888vh solid #264a2d;
+    &::before {
+      box-shadow: 0.26666666vh -2.1333333333vh 0 0.26666666vh #84b384,
+        0.0888888888vh -0.8888888888vh 0 0.0888888888vh #84b384,
+        -0.0888888888vh -1.777777777vh 0 0.26666666vh #264a2d,
+        -0.26666666vh -0.622222222vh 0 0.0888888888vh #264a2d,
+        -0.26666666vh 0.26666666vh 0 0 #264a2d;
+    }
+    &::after {
+      box-shadow:
+        0.0888888888vh -0.8888888888vh 0 0.0888888888vh #84b384,
+        -0.26666666vh -0.622222222vh 0 0.0888888888vh #264a2d,
+        -0.26666666vh 0.26666666vh 0 0 #264a2d;
+    }
+  }
 
   .menu-wrap {
     border: 0.4088888vh solid #264a2d;

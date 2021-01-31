@@ -11,6 +11,31 @@
   z-index: 50000;
 }
 
+.open-menu-btn::before,
+.open-menu-btn::after {
+  content: '';
+  position: absolute;
+  background: #84b384;
+}
+
+.open-menu-btn::before {
+  left: 25%;
+  bottom: 20%;
+  height: 5%;
+  width: 30%;
+  -webkit-box-shadow: 0.15vw -1.2vw 0 0.15vw #84b384, 0.05vw -0.5vw 0 0.05vw #84b384, -0.05vw -1vw 0 0.15vw #264a2d, -0.15vw -0.35vw 0 0.05vw #264a2d, -0.15vw 0.15vw 0 0 #264a2d;
+  box-shadow: 0.15vw -1.2vw 0 0.15vw #84b384, 0.05vw -0.5vw 0 0.05vw #84b384, -0.05vw -1vw 0 0.15vw #264a2d, -0.15vw -0.35vw 0 0.05vw #264a2d, -0.15vw 0.15vw 0 0 #264a2d;
+}
+
+.open-menu-btn::after {
+  left: 70%;
+  bottom: 20%;
+  height: 5%;
+  width: 5%;
+  -webkit-box-shadow: 0.05vw -0.5vw 0 0.05vw #84b384, -0.15vw -0.35vw 0 0.05vw #264a2d, -0.15vw 0.15vw 0 0 #264a2d;
+  box-shadow: 0.05vw -0.5vw 0 0.05vw #84b384, -0.15vw -0.35vw 0 0.05vw #264a2d, -0.15vw 0.15vw 0 0 #264a2d;
+}
+
 .body-menu-opened::before {
   content: '';
   position: fixed;
@@ -244,6 +269,20 @@
 }
 
 @media screen and (min-aspect-ratio: 16/9) {
+  .open-menu-btn {
+    border: 0.4088888vh solid #264a2d;
+  }
+
+  .open-menu-btn::before {
+    -webkit-box-shadow: 0.26666666vh -2.13333333vh 0 0.26666666vh #84b384, 0.08888889vh -0.88888889vh 0 0.08888889vh #84b384, -0.08888889vh -1.77777778vh 0 0.26666666vh #264a2d, -0.26666666vh -0.62222222vh 0 0.08888889vh #264a2d, -0.26666666vh 0.26666666vh 0 0 #264a2d;
+    box-shadow: 0.26666666vh -2.13333333vh 0 0.26666666vh #84b384, 0.08888889vh -0.88888889vh 0 0.08888889vh #84b384, -0.08888889vh -1.77777778vh 0 0.26666666vh #264a2d, -0.26666666vh -0.62222222vh 0 0.08888889vh #264a2d, -0.26666666vh 0.26666666vh 0 0 #264a2d;
+  }
+
+  .open-menu-btn::after {
+    -webkit-box-shadow: 0.08888889vh -0.88888889vh 0 0.08888889vh #84b384, -0.26666666vh -0.62222222vh 0 0.08888889vh #264a2d, -0.26666666vh 0.26666666vh 0 0 #264a2d;
+    box-shadow: 0.08888889vh -0.88888889vh 0 0.08888889vh #84b384, -0.26666666vh -0.62222222vh 0 0.08888889vh #264a2d, -0.26666666vh 0.26666666vh 0 0 #264a2d;
+  }
+
   .menu-wrap {
     border: 0.4088888vh solid #264a2d;
   }

@@ -24,6 +24,7 @@ const config = {
     audioStart: './assets/audio/pdta-start.mp3',
     audioMain: './assets/audio/pdta-main.mp3',
     audioEnding: './assets/audio/pdta-ending.mp3',
+    audioEnding2: './assets/audio/pdta-ending2.mp3',
     audioRobot: './assets/audio/pdta-ending.mp3',
 
     isMushroomBtnSwitch: false,
@@ -52,6 +53,14 @@ const config = {
 
     isColorBtnStart: false,
     colorBtnCod: [],
+
+    isPhoneBtnStart: false,
+    isPhoneBtnActive: false,
+    phoneBtnCod: [],
+
+    satanicBtnCod: [],
+
+    fourBtnCod: [],
 
     lang: {
         en: {
@@ -336,11 +345,11 @@ const closeDialog = (dialogContElem) => {
 
 const waitPeacefulEnding = () => {
     config.waitPeacefulEnding = setTimeout (() => {
-        if(config.mainBtnCount =! 0){
+        if(config.mainBtnCount =! 0 && config.achievementCount <= 12){
             getAchievement(1);
             runDialog(config.peacefulEndingDialogClass);
         }
-    }, 600000000);
+    }, 60000);
 };
 
 const resetGame = () => {
@@ -353,6 +362,10 @@ const resetGame = () => {
         pauseAudio();
         config.audio.src = config.audioStart;
         config.audio.play();
+
+        if (config.achievementCount === 12) {
+            getAchievement(13);
+        }
     });
 };
 
@@ -363,7 +376,9 @@ const resetGame = () => {
 
 const getAchievement = (number) => {
     const achievementElem = document.querySelector(`.achievement-elem${number}`);
-    achievementElem.classList.add('active');
+    if (achievementElem) {
+        achievementElem.classList.add('active');
+    }
 
     const achievementProgress = document.querySelector(`.progress-elem[data-achievement="${number}"]`);
     achievementProgress.classList.add('active');
@@ -380,11 +395,16 @@ const getAchievement = (number) => {
     localStorage.setItem('achievementList', config.achievementList);
     localStorage.setItem('achievementCount', config.achievementCount);
 
-    if (config.achievementCount >= 10) {
+    if (config.achievementCount === 13) {
         runDialog(config.endGameDialogClass);
-        // TODO coffee;
+        pauseAudio();
+        config.audio.src = config.audioEnding2;
+        config.audio.play();
     } else {
         blockBtns();
+        pauseAudio();
+        config.audio.src = config.audioEnding;
+        config.audio.play();
     }
 };
 const clearAchievements = () => {
@@ -401,8 +421,10 @@ const clearAchievements = () => {
 const showAchievements = () => {
     if (config.achievementList) {
         config.achievementList.split(',').forEach(function(number) {
-            let achievementElem = document.querySelector(`.achievement-elem${number}`);
-            achievementElem.classList.add('active');
+            if (number <= 12) {
+                let achievementElem = document.querySelector(`.achievement-elem${number}`);
+                achievementElem.classList.add('active');
+            }
             let achievementProgress = document.querySelector(`.progress-elem[data-achievement="${number}"]`);
             achievementProgress.classList.add('active');
         });
@@ -428,6 +450,7 @@ const resetConfig = () => {
     config.isSwitchSecondRight = false;
     config.isBenderBtnStart = false;
     config.benderBtnCod = [];
+
 };
 const clearConfig = () => {
     resetConfig();
@@ -503,6 +526,24 @@ const mainEvents = () => {
         })
     });
 
+    document.querySelectorAll('.phone-btn').forEach(function (elem) {
+        elem.addEventListener('click', function () {
+            activePhoneBtns(this);
+        })
+    });
+
+    document.querySelectorAll('.satanic-btn').forEach(function (elem) {
+        elem.addEventListener('click', function () {
+            activeSatanicBtns(this);
+        })
+    });
+
+    document.querySelectorAll('.four-btn').forEach(function (elem) {
+        elem.addEventListener('click', function () {
+            activeFourBtns(this);
+        })
+    });
+
 };
 const clearBodyClassList = () => {
     let classListArr = config.bodyElem.classList;
@@ -512,6 +553,11 @@ const clearBodyClassList = () => {
 };
 const mainBtnEvent = () => {
     config.mainBtnCount++;
+
+    if ( config.achievementCount >= 12 ) {
+        config.bodyElem.classList.add('body-coffee-show');
+        return false;
+    }
 
     if (config.isMushroomBtnSwitch) {
         clearBodyClassList();
@@ -537,9 +583,6 @@ const mainBtnEvent = () => {
             config.bodyElem.classList.add('body-hammer-block-show');
             break;
         case 20:
-            pauseAudio();
-            config.audio.src = config.audioEnding;
-            config.audio.play();
             getAchievement(2);
             break;
     }
@@ -553,23 +596,7 @@ const activeMushroomBtn = () => {
 
 const activeRomanBtns = (thisElem) => {
 
-    if (!config.isRomanBtnStart) {
-        config.isRomanBtnStart = true;
-        config.bodyElem.classList.add('body-roman-numbers-show');
-    }
-
-    if (config.isBenderBtnStart) {
-        config.isBenderBtnStart = false;
-        config.bodyElem.classList.remove('body-bender-numbers-show');
-    }
-    if (config.isDditBtnStart) {
-        config.isDditBtnStart = false;
-        config.bodyElem.classList.remove('body-ddit-numbers-show');
-    }
-    if (!config.isColorBtnStart) {
-        config.isColorBtnStart = false;
-        config.bodyElem.classList.remove('body-color-numbers-show');
-    }
+    changeNumbersShow(thisElem);
 
     let btnNumber = +thisElem.dataset.roman;
 
@@ -592,7 +619,7 @@ const activeRomanBtns = (thisElem) => {
 
 const activeSwitchSecondLeft = () => {
     config.isSwitchSecondLeft = true;
-    config.bodyElem.classList.add('body-switch-second-left');
+    config.bodyElem.classList.add('body-switch-second-left', 'body-phone-btn-show');
 };
 const activeSwitchSecondRight = () => {
     config.bodyElem.classList.add('body-switch-second-right', 'body-bender-btn-show');
@@ -600,23 +627,7 @@ const activeSwitchSecondRight = () => {
 
 const activeBenderBtns = (thisElem) => {
 
-    if (!config.isBenderBtnStart) {
-        config.isBenderBtnStart = true;
-        config.bodyElem.classList.add('body-bender-numbers-show');
-    }
-
-    if (config.isRomanBtnStart) {
-        config.isRomanBtnStart = false;
-        config.bodyElem.classList.remove('body-roman-numbers-show');
-    }
-    if (config.isDditBtnStart) {
-        config.isDditBtnStart = false;
-        config.bodyElem.classList.remove('body-ddit-numbers-show');
-    }
-    if (!config.isColorBtnStart) {
-        config.isColorBtnStart = false;
-        config.bodyElem.classList.remove('body-color-numbers-show');
-    }
+    changeNumbersShow(thisElem);
 
     let btnNumber = +thisElem.dataset.bender;
 
@@ -640,23 +651,7 @@ const activeBenderBtns = (thisElem) => {
 
 const activeDditBtns = (thisElem) => {
 
-    if (!config.isDditBtnStart) {
-        config.isDditBtnStart = true;
-        config.bodyElem.classList.add('body-ddit-numbers-show');
-    }
-
-    if (config.isRomanBtnStart) {
-        config.isRomanBtnStart = false;
-        config.bodyElem.classList.remove('body-roman-numbers-show');
-    }
-    if (config.isBenderBtnStart) {
-        config.isBenderBtnStart = false;
-        config.bodyElem.classList.remove('body-bender-numbers-show');
-    }
-    if (!config.isColorBtnStart) {
-        config.isColorBtnStart = false;
-        config.bodyElem.classList.remove('body-color-numbers-show');
-    }
+    changeNumbersShow(thisElem);
 
     let btnNumber = +thisElem.dataset.ddit;
 
@@ -801,23 +796,7 @@ config.hammerElem.ondragstart = function() {
 
 const activeColorBtns = (thisElem) => {
 
-    if (!config.isColorBtnStart) {
-        config.isColorBtnStart = true;
-        config.bodyElem.classList.add('body-color-numbers-show');
-    }
-
-    if (config.isRomanBtnStart) {
-        config.isRomanBtnStart = false;
-        config.bodyElem.classList.remove('body-roman-numbers-show');
-    }
-    if (config.isBenderBtnStart) {
-        config.isBenderBtnStart = false;
-        config.bodyElem.classList.remove('body-bender-numbers-show');
-    }
-    if (config.isDditBtnStart) {
-        config.isDditBtnStart = false;
-        config.bodyElem.classList.remove('body-ddit-numbers-show');
-    }
+    changeNumbersShow(thisElem);
 
     let btnNumber = +thisElem.dataset.color;
 
@@ -838,5 +817,156 @@ const activeColorBtns = (thisElem) => {
 
 };
 
+
+const activePhoneBtns = (thisElem) => {
+
+    changeNumbersShow(thisElem);
+
+    let btnNumber = +thisElem.dataset.phone;
+
+    config.phoneBtnCod.push(btnNumber);
+    document.querySelector('.screen-bottom-phone-numbers span:nth-child(' + config.phoneBtnCod.length + ')').textContent = btnNumber;
+    if (config.phoneBtnCod.length >= 4) {
+        if (config.phoneBtnCod.join() === [8,3,6,7].join()) {
+            config.bodyElem.classList.add('body-satanic-four-block-show');
+        }
+        if (config.phoneBtnCod.join() === [8,2,3,2].join()) {
+            clearBodyClassList();
+            getAchievement(9);
+        }
+        config.phoneBtnCod = [];
+        setTimeout (() => {
+            document.querySelectorAll('.screen-bottom-phone-numbers span').forEach(function (item) {
+                item.textContent = '_'
+            });
+        }, 200);
+    }
+
+};
+
+const activeSatanicBtns = (thisElem) => {
+
+    let btnNumber = +thisElem.dataset.satanic;
+
+    if (config.satanicBtnCod.indexOf( btnNumber ) === -1) {
+        thisElem.classList.add('active');
+        config.satanicBtnCod.push(btnNumber);
+    }
+
+    if (config.satanicBtnCod.length >= 5) {
+        if (config.satanicBtnCod.join() === [14,31,37,72,76].join()) {
+            clearBodyClassList();
+            getAchievement(10);
+        }
+        config.satanicBtnCod = [];
+
+        let satanicBtns = document.querySelectorAll('.satanic-btn');
+        satanicBtns.forEach(function (elem) {
+            elem.classList.remove('active');
+        });
+    }
+};
+
+const activeFourBtns = (thisElem) => {
+
+    let btnNumber = +thisElem.dataset.four;
+
+    config.fourBtnCod.push(btnNumber);
+    document.querySelector('.screen-bottom-four-numbers span:nth-child(' + config.fourBtnCod.length + ')').textContent = btnNumber;
+
+    if (config.fourBtnCod.length >= 4) {
+        if (config.fourBtnCod.join() === [1,2,4,3].join()) {
+            clearBodyClassList();
+            getAchievement(11);
+        }
+        if (config.fourBtnCod.join() === [1,2,1,1].join()) {
+            clearBodyClassList();
+            getAchievement(12);
+        }
+        config.fourBtnCod = [];
+        setTimeout (() => {
+            document.querySelectorAll('.screen-bottom-four-numbers span').forEach(function (item) {
+                item.textContent = '_'
+            });
+        }, 200);
+    }
+};
+
+
+const changeNumbersShow = (elem) => {
+
+    if (elem.classList.contains('roman-btn')) {
+        if (!config.isRomanBtnStart) {
+            config.isRomanBtnStart = true;
+            config.bodyElem.classList.add('body-roman-numbers-show');
+        }
+    } else {
+        if (config.isRomanBtnStart) {
+            config.isRomanBtnStart = false;
+            config.bodyElem.classList.remove('body-roman-numbers-show');
+        }
+    }
+
+    if (elem.classList.contains('bender-btn')) {
+        if (!config.isBenderBtnStart) {
+            config.isBenderBtnStart = true;
+            config.bodyElem.classList.add('body-bender-numbers-show');
+        }
+    } else {
+        if (config.isBenderBtnStart) {
+            config.isBenderBtnStart = false;
+            config.bodyElem.classList.remove('body-bender-numbers-show');
+        }
+    }
+
+    if (elem.classList.contains('ddit-btn')) {
+        if (!config.isDditBtnStart) {
+            config.isDditBtnStart = true;
+            config.bodyElem.classList.add('body-ddit-numbers-show');
+        }
+    } else {
+        if (config.isDditBtnStart) {
+            config.isDditBtnStart = false;
+            config.bodyElem.classList.remove('body-ddit-numbers-show');
+        }
+    }
+
+    if (elem.classList.contains('color-btn')) {
+        if (!config.isColorBtnStart) {
+            config.isColorBtnStart = true;
+            config.bodyElem.classList.add('body-color-numbers-show');
+        }
+    } else {
+        if (config.isColorBtnStart) {
+            config.isColorBtnStart = false;
+            config.bodyElem.classList.remove('body-color-numbers-show');
+        }
+    }
+
+    if (elem.classList.contains('phone-btn')) {
+        if (!config.isPhoneBtnStart) {
+            config.isPhoneBtnStart = true;
+            config.bodyElem.classList.add('body-phone-numbers-show');
+        }
+    } else {
+        if (config.isPhoneBtnStart) {
+            config.isPhoneBtnStart = false;
+            config.bodyElem.classList.remove('body-phone-numbers-show');
+        }
+    }
+
+    if (elem.classList.contains('four-btn')) {
+        if (!config.isPhoneBtnStart) {
+            config.isPhoneBtnStart = true;
+            config.bodyElem.classList.add('body-four-numbers-show');
+        }
+    } else {
+        if (config.isPhoneBtnStart) {
+            config.isPhoneBtnStart = false;
+            config.bodyElem.classList.remove('body-four-numbers-show');
+        }
+    }
+
+};
 
 showFirstScreen();

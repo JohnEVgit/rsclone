@@ -97,6 +97,16 @@
   right: 0;
 }
 
+.body-switch-second-left .switch-second-cover,
+.body-switch-second-right .switch-second-cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
 .body-switch-second-left .switch-second-inner,
 .body-switch-second-right .switch-second-inner {
   left: 6%;

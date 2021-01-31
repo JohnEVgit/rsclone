@@ -1,0 +1,110 @@
+.satanic-btns {
+  position: absolute;
+  left: 21%;
+  bottom: 11%;
+  width: 20%;
+  height: 47%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-shadow: inset 0 0.15vw 0.3vw 0.05vw #293134;
+  box-shadow: inset 0 0.15vw 0.3vw 0.05vw #293134;
+  padding: 0.7vw;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0.3vw;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.satanic-btns::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.body-satanic-four-block-show .satanic-btns {
+  opacity: 1;
+}
+
+.body-satanic-four-block-show .satanic-btns::before {
+  display: none;
+}
+
+.satanic-btn {
+  width: 13%;
+  height: 13%;
+  margin: auto;
+  border-radius: 10%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #264a2d;
+  -webkit-box-shadow: 0.05vw 0.15vw 0.1vw #293134;
+  box-shadow: 0.05vw 0.15vw 0.1vw #293134;
+}
+
+.satanic-btn.active {
+  background: #BF3530;
+}
+
+.satanic-btns-info {
+  position: absolute;
+  left: 21%;
+  bottom: 2%;
+  width: 20%;
+  text-align: center;
+  color: #8a8ea3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.satanic-btns-info-numbers {
+  position: relative;
+  -webkit-transform: rotate(-25deg) scaleX(0.85);
+  transform: rotate(-25deg) scaleX(0.85);
+  letter-spacing: 0.1em;
+  display: block;
+  font-size: 1.2vw;
+}
+
+.satanic-btns-info-star {
+  font-size: 1.2vw;
+  -webkit-transform: rotate(-25deg) scaleX(1.25);
+  transform: rotate(-25deg) scaleX(1.25);
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .satanic-btns {
+    -webkit-box-shadow: inset 0 0.26666667vh 0.53333333vh 0.08888889vh #293134;
+    box-shadow: inset 0 0.26666667vh 0.53333333vh 0.08888889vh #293134;
+    padding: 1.24444444vh;
+    border-radius: 0.53333333vh;
+  }
+
+  .satanic-btn {
+    -webkit-box-shadow: 0.08888889vh 0.26666667vh 0.17777778vh #293134;
+    box-shadow: 0.08888889vh 0.26666667vh 0.17777778vh #293134;
+  }
+
+  .satanic-btns-info-numbers {
+    font-size: 2.13333333vh;
+  }
+
+  .satanic-btns-info-star {
+    font-size: 2.13333333vh;
+  }
+}
