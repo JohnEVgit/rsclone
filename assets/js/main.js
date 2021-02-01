@@ -22,11 +22,11 @@ const config = {
     volume: localStorage.getItem('volume') ? +localStorage.getItem('volume') : 0.8,
     volumeElem: document.querySelector('.menu-volume'),
     audio: null,
-    audioStart: 'https://t4.bcbits.com/stream/fdfd9543ee6ca95306fa6c73bbaf9175/mp3-128/1128407927?p=0&ts=1612223905&t=030b352e0b55d8855c7fb1b9de133f70d5f0e9fc&token=1612223905_ebca324ecd5c299d7ea285ff4409dfb39bd17341',
-    audioMain: 'https://t4.bcbits.com/stream/8776bff815754f728a2ed73400da216a/mp3-128/956859200?p=0&ts=1612176387&t=c8f3537dd24d35ee53e1b3d4323cd193c074faa7&token=1612176387_ffae53f4378c2015feb7f2fb0059f0d1e7b1854e',
-    audioEnding: 'https://t4.bcbits.com/stream/0532d1055e23532da8900f39bbeb76b7/mp3-128/73277956?p=0&ts=1612223905&t=54af0f0744e722a3681a64a1cff53118d491290b&token=1612223905_8b0513643b9c05e80b886a96aa1f35c2be248c69',
-    audioEnding2: 'https://t4.bcbits.com/stream/4a2f3e3f8e64d55d501187d397e67285/mp3-128/466422724?p=0&ts=1612224154&t=2f5c1df254c8d74370d8a143dd6edbc9caaca85b&token=1612224154_c11bd1af70ce477dd46a860a0e0d18b4734efc07',
 
+    audioStart: './assets/audio/pdta-start.mp3',
+    audioMain: './assets/audio/pdta-main.mp3',
+    audioEnding: './assets/audio/pdta-ending.mp3',
+    audioEnding2: './assets/audio/pdta-ending2.mp3',
     isMushroomBtnSwitch: false,
 
     isRomanBtnStart: false,
@@ -60,6 +60,7 @@ const config = {
 
     satanicBtnCod: [],
 
+    isFourBtnStart: false,
     fourBtnCod: [],
 
     drinkCoffeeCount: 0,
@@ -300,6 +301,10 @@ const menuEvents = () => {
         clearAchievements();
         clearConfig();
 
+        pauseAudio();
+        config.audio.src = config.audioStart;
+        config.audio.play();
+
         runDialog(config.startDialogClass);
     });
     document.querySelector('.menu-btn-quite-js').addEventListener('click', function () {
@@ -439,6 +444,8 @@ const resetGame = () => {
         pauseAudio();
         if (config.achievementCount === 13) {
             config.audio.src = config.audioEnding2;
+            document.querySelector('.screen-top-text').textContent = 'Game Over!';
+            config.bodyElem.classList.add('body-game-over');
         } else {
             config.audio.src = config.audioStart;
         }
@@ -481,11 +488,14 @@ const getAchievement = (number) => {
         pauseAudio();
         config.audio.src = config.audioEnding2;
         config.audio.play();
+        config.bodyElem.classList.add('body-game-over');
+        document.querySelector('.screen-top-text').textContent = 'Game Over!';
     } else {
         blockBtns();
         pauseAudio();
         config.audio.src = config.audioEnding;
         config.audio.play();
+        document.querySelector('.screen-top-text').textContent = achievementElem.textContent;
     }
 };
 const clearAchievements = () => {
@@ -538,6 +548,7 @@ const resetConfig = () => {
     config.isPhoneBtnActive = false;
     config.phoneBtnCod = [];
     config.satanicBtnCod = [];
+    config.isFourBtnStart = false;
     config.fourBtnCod = [];
     config.drinkCoffeeCount = 0;
 
@@ -559,6 +570,8 @@ const blockBtns = () => {
 const initAudio = () => {
     if (config.achievementCount === 13) {
         config.audio = new Audio(config.audioEnding2);
+        document.querySelector('.screen-top-text').textContent = 'Game Over!';
+        config.bodyElem.classList.add('body-game-over');
     } else {
         config.audio = new Audio(config.audioStart);
     }
@@ -965,6 +978,8 @@ const activeSatanicBtns = (thisElem) => {
 
 const activeFourBtns = (thisElem) => {
 
+    changeNumbersShow(thisElem);
+
     let btnNumber = +thisElem.dataset.four;
 
     config.fourBtnCod.push(btnNumber);
@@ -1052,13 +1067,13 @@ const changeNumbersShow = (elem) => {
     }
 
     if (elem.classList.contains('four-btn')) {
-        if (!config.isPhoneBtnStart) {
-            config.isPhoneBtnStart = true;
+        if (!config.isFourBtnStart) {
+            config.isFourBtnStart = true;
             config.bodyElem.classList.add('body-four-numbers-show');
         }
     } else {
-        if (config.isPhoneBtnStart) {
-            config.isPhoneBtnStart = false;
+        if (config.isFourBtnStart) {
+            config.isFourBtnStart = false;
             config.bodyElem.classList.remove('body-four-numbers-show');
         }
     }

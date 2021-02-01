@@ -1,5 +1,4 @@
 .body-hammer-block-show .hammer-block {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -14,11 +13,7 @@
   bottom: 39%;
   height: 46%;
   background: #8a8ea3;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  -webkit-transform: translateX(105%);
   transform: translateX(105%);
   border-radius: 0.2vw 0 0 0.2vw;
 }
@@ -43,12 +38,8 @@
   border: 0.6vw solid #d3d7e0;
   border-right: none;
   border-radius: 0.2vw 0 0 0.2vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: inset -0.1vw -0.1vw 0.1vw 0 #636f79;
   box-shadow: inset -0.1vw -0.1vw 0.1vw 0 #636f79;
 }
 
@@ -79,14 +70,8 @@
   right: 0;
   bottom: 0;
   top: 32%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   overflow: hidden;
 }
@@ -115,24 +100,21 @@
   position: relative;
   width: 1vw;
   height: 6vw;
-  background: #6f5365;
+  background: linear-gradient(to right, #6f5365 0%, #a98576 50%, #6f5365 100%);
   z-index: 10;
+  box-shadow: 0.3vw 0.3vw 0 #8a8ea3;
 }
 
-.hammer-elem::before {
-  content: 'hammer';
-  -webkit-transform: rotate(90deg) translateY(-100%);
-  transform: rotate(90deg) translateY(-100%);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  color: #fff;
-  font-size: 0.6vw;
-  display: block;
-  width: 6vw;
-  text-align: center;
-  height: 1vw;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.hammer-elem::after {
+  content: '';
+  position: absolute;
+  left: -150%;
+  right: -150%;
+  top: 5%;
+  height: 15%;
+  background: linear-gradient(70deg, #8a8ea3 0%, #293134 30%, #293134 100%);
+  border: 0.15vw solid #1c241b;
+  box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
 }
 
 .hammer-bottom {
@@ -145,7 +127,6 @@
   border-radius: 0 0 0 0.2vw;
   border-right: 0.15vw solid #8a8ea3;
   border-bottom: 0.15vw solid #293134;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -158,7 +139,6 @@
     border: 1.06666666vh solid #d3d7e0;
     border-right: none;
     border-radius: 0.35555555vh 0 0 0.35555555vh;
-    -webkit-box-shadow: inset -0.17777777vh -0.17777778vh 0.17777778vh 0 #636f79;
     box-shadow: inset -0.17777777vh -0.17777778vh 0.17777778vh 0 #636f79;
   }
 
@@ -184,11 +164,11 @@
   .hammer-elem {
     width: 1.77777777vh;
     height: 10.66666666vh;
+    box-shadow: 0.53333333vh 0.53333333vh 0 #8a8ea3;
   }
 
-  .hammer-elem::before {
-    font-size: 1.06666667vh;
-    width: 10.66666666vh;
-    height: 1.77777777vh;
+  .hammer-elem::after {
+    border: 0.26666667vh solid #1c241b;
+    box-shadow: 0.53333333vh 0.53333333vh 0 #45485261;
   }
 }

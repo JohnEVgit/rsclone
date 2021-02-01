@@ -16,12 +16,10 @@
   top: 10%;
   bottom: 10%;
   background: #828282;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(17%, #828282), color-stop(17%, #695a5f), color-stop(19%, #695a5f), color-stop(19%, #828282), color-stop(25%, #828282), color-stop(25%, #695a5f), color-stop(27%, #695a5f), color-stop(27%, #828282), color-stop(29%, #828282), color-stop(29%, #695a5f), color-stop(31%, #695a5f), color-stop(31%, #828282), color-stop(33%, #828282), color-stop(33%, #695a5f), color-stop(35%, #695a5f), color-stop(35%, #828282), color-stop(41%, #828282), color-stop(41%, #695a5f), color-stop(43%, #695a5f), color-stop(43%, #828282), color-stop(45%, #828282), color-stop(45%, #695a5f), color-stop(47%, #695a5f), color-stop(47%, #828282), color-stop(53%, #828282), color-stop(53%, #695a5f), color-stop(55%, #695a5f), color-stop(55%, #828282), color-stop(57%, #828282), color-stop(57%, #695a5f), color-stop(59%, #695a5f), color-stop(59%, #828282), color-stop(65%, #828282), color-stop(65%, #695a5f), color-stop(67%, #695a5f), color-stop(67%, #828282), color-stop(69%, #828282), color-stop(69%, #695a5f), color-stop(71%, #695a5f), color-stop(71%, #828282), color-stop(73%, #828282), color-stop(73%, #695a5f), color-stop(75%, #695a5f), color-stop(75%, #828282), color-stop(81%, #828282), color-stop(81%, #695a5f), color-stop(83%, #695a5f), color-stop(83%, #828282));
   background: linear-gradient(180deg, #828282 17%, #695a5f 17%, #695a5f 19%, #828282 19%, #828282 25%, #695a5f 25%, #695a5f 27%, #828282 27%, #828282 29%, #695a5f 29%, #695a5f 31%, #828282 31%, #828282 33%, #695a5f 33%, #695a5f 35%, #828282 35%, #828282 41%, #695a5f 41%, #695a5f 43%, #828282 43%, #828282 45%, #695a5f 45%, #695a5f 47%, #828282 47%, #828282 53%, #695a5f 53%, #695a5f 55%, #828282 55%, #828282 57%, #695a5f 57%, #695a5f 59%, #828282 59%, #828282 65%, #695a5f 65%, #695a5f 67%, #828282 67%, #828282 69%, #695a5f 69%, #695a5f 71%, #828282 71%, #828282 73%, #695a5f 73%, #695a5f 75%, #828282 75%, #828282 81%, #695a5f 81%, #695a5f 83%, #828282 83%);
   border-left: 0.2vw solid #695a5f;
   border-right: 0.2vw solid #695a5f;
   -o-border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
-  border-image: -webkit-gradient(linear, left top, left bottom, from(rgba(105, 90, 95, 0)), color-stop(17%, #695a5f), color-stop(83%, #695a5f), to(rgba(105, 90, 95, 0))) 1 100%;
   border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
 }
 
@@ -48,29 +46,18 @@
   background: #636f79;
   display: inline-block;
   margin: 0 0 0.3vw 0.3vw;
-  -webkit-box-shadow: 0.5vw 0 0 #636f79, 1vw 0 0 #695a5f, 1.5vw 0 0 #636f79, 2vw 0 0 #636f79, 2.5vw 0 0 #636f79, 3vw 0 0 #695a5f;
   box-shadow: 0.5vw 0 0 #636f79, 1vw 0 0 #695a5f, 1.5vw 0 0 #636f79, 2vw 0 0 #636f79, 2.5vw 0 0 #636f79, 3vw 0 0 #695a5f;
 }
 
 .main-instruction-bottom-block {
   line-height: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
 .main-instruction-formula {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin: 0;
   text-transform: none;
@@ -101,8 +88,6 @@
 }
 
 .main-instruction-icon-arrows {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
   padding-bottom: 1vw;
@@ -110,7 +95,6 @@
 
 .main-instruction-icon-text {
   text-transform: uppercase;
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   font-size: 0.66vw;
   position: absolute;
@@ -125,7 +109,6 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 0;
   height: 0;
@@ -139,23 +122,18 @@
 .icon-arrow-left-up::before,
 .icon-arrow-right-up::before {
   content: "";
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   right: 0;
   top: -0.15625vw;
   position: absolute;
   height: 0.20833333vw;
-  -webkit-box-shadow: inset 0 0 0 1.66666667vw;
   box-shadow: inset 0 0 0 1.66666667vw;
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   width: 0.78125vw;
-  -webkit-transform-origin: right top;
   transform-origin: right top;
 }
 
 .icon-arrow-left-up {
-  -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   margin-right: 0.3125vw;
 }
@@ -164,7 +142,6 @@
   text-shadow: 0.15vw 0 0 #86223c, -0.15vw 0 0 #86223c, 0 0.15vw 0 #86223c, 0 -0.15vw 0 #86223c;
   font-size: 2vw;
   color: #828282;
-  -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
 }
 
@@ -186,7 +163,6 @@
     width: 0.62222222vh;
     height: 0.62222222vh;
     margin: 0 0 0.53333333vh 0.53333333vh;
-    -webkit-box-shadow: 0.88888889vh 0 0 #636f79, 1.77777778vh 0 0 #695a5f, 2.66666667vh 0 0 #636f79, 3.55555556vh 0 0 #636f79, 4.44444444vh 0 0 #636f79, 5.33333333vh 0 0 #695a5f;
     box-shadow: 0.88888889vh 0 0 #636f79, 1.77777778vh 0 0 #695a5f, 2.66666667vh 0 0 #636f79, 3.55555556vh 0 0 #636f79, 4.44444444vh 0 0 #636f79, 5.33333333vh 0 0 #695a5f;
   }
 
@@ -208,7 +184,6 @@
   .icon-arrow-right-up::before {
     top: -0.27777778vh;
     height: 0.37037037vh;
-    -webkit-box-shadow: inset 0 0 0 2.96296296vh;
     box-shadow: inset 0 0 0 2.96296296vh;
     width: 1.38888889vh;
   }

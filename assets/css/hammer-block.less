@@ -93,20 +93,19 @@
   position: relative;
   width: 1vw;
   height: 6vw;
-  background: #6f5365;
+  background: linear-gradient(to right, #6f5365 0%, #a98576 50%, #6f5365 100%);
   z-index: 10;
-  &::before {
-    content: 'hammer';
-    transform: rotate(90deg) translateY(-100%);
-    transform-origin: 0 0;
-    color: #fff;
-    font-size: 0.6vw;
-    display: block;
-    width: 6vw;
-    text-align: center;
-    height: 1vw;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  box-shadow: 0.3vw 0.3vw 0 #8a8ea3;
+  &::after {
+    content: '';
+    position: absolute;
+    left: -150%;
+    right: -150%;
+    top: 5%;
+    height: 15%;
+    background: linear-gradient( 70deg, #8a8ea3 0%, #293134 30%, #293134 100%);
+    border: 0.15vw solid #1c241b;
+    box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
   }
 }
 
@@ -154,10 +153,11 @@
   .hammer-elem {
     width: 1.77777777vh;
     height: 10.66666666vh;
-    &::before {
-      font-size: 1.066666666vh;
-      width: 10.66666666vh;
-      height: 1.77777777vh;
+    box-shadow: 0.533333333vh 0.533333333vh 0 #8a8ea3;
+    &::after {
+      border: 0.266666666vh solid #1c241b;
+      box-shadow: 0.533333333vh 0.533333333vh 0 #45485261;
     }
   }
+
 }

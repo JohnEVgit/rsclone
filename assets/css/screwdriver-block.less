@@ -89,22 +89,30 @@
 }
 .screwdriver-elem {
   position: relative;
-  width: 1vw;
+  width: 0.3vw;
   height: 6vw;
-  background: #6f5365;
+  background: linear-gradient(to right, #8a8ea3 0%, #8a8ea3 55%, #3f4e54 85%, #3f4e54 100%);
   z-index: 10;
+  box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
   &::before {
-    content: 'screwdriver';
-    transform: rotate(90deg) translateY(-100%);
-    transform-origin: 0 0;
-    color: #fff;
-    font-size: 0.6vw;
-    display: block;
-    width: 6vw;
-    text-align: center;
-    height: 1vw;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    content: '';
+    position: absolute;
+    left: -100%;
+    right: -100%;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient(to right, #1c241b 0%, #3f4e54 50%, #293134 100%);
+    box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    top: 0;
+    height: 10%;
+    background: linear-gradient(to right, #8a8ea3 0%, #8a8ea3 55%, #3f4e54 85%, #3f4e54 100%);
+    box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
   }
 }
 
@@ -162,12 +170,15 @@
     }
   }
   .screwdriver-elem {
-    width: 1.77777777vh;
-    height: 10.66666666vh;
+    width: 0.533333333vh;
+    height: 6vw;
+    box-shadow: 0.533333333vh 0.533333333vh 0 rgba(69, 72, 82, 0.38);
     &::before {
-      font-size: 1.066666666vh;
-      width: 10.66666666vh;
-      height: 1.77777777vh;
+      box-shadow: 0.533333333vh 0.533333333vh 0 rgba(69, 72, 82, 0.38);
+    }
+    &::after {
+      box-shadow: 0.533333333vh 0.533333333vh 0 rgba(69, 72, 82, 0.38);
     }
   }
+
 }

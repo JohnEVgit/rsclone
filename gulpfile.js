@@ -3,7 +3,7 @@ const taskListing = require('gulp-task-listing');
 const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 const gcmq = require('gulp-group-css-media-queries');
 
@@ -21,9 +21,9 @@ gulp.task('build-css', () =>{
         .pipe(gulp.dest('./assets/css'));
 });
 gulp.task('build-js', () =>{
-    return gulp.src('assets/js/*.js')
+    return gulp.src('assets/js/main.js')
         .pipe(concat('main.min.js'))
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest('./assets/js'));
 });
 

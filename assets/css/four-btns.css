@@ -3,21 +3,14 @@
   right: 4%;
   bottom: 4%;
   width: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-box-shadow: inset 0 0.15vw 0.3vw 0.05vw #293134;
   box-shadow: inset 0 0.15vw 0.3vw 0.05vw #293134;
   padding: 0.7vw;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 0.3vw;
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
 
@@ -34,7 +27,6 @@
 .four-btn {
   border-radius: 20%;
   width: 1.5em;
-  -webkit-box-shadow: 0 0.15vw 0.3vw 0.05vw #293134, 0.5vw 0.2vw 0.5vw rgba(41, 49, 52, 0.5);
   box-shadow: 0 0.15vw 0.3vw 0.05vw #293134, 0.5vw 0.2vw 0.5vw rgba(41, 49, 52, 0.5);
   text-align: center;
   font-family: serif;
@@ -43,15 +35,11 @@
   line-height: 1em;
   padding: 0.2em 0;
   color: #BF3530;
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
-  transition: -webkit-box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
   text-shadow: 0.02em 0 0.02em #732539, -0.02em 0 0.02em #732539, 0 0.02em 0.02em #732539, 0 -0.02em 0.02em #732539;
 }
 
 .four-btn:active {
-  -webkit-box-shadow: 0 0.05vw 0.1vw 0.02vw #293134, 0.2vw 0.1vw 0.2vw rgba(41, 49, 52, 0.5);
   box-shadow: 0 0.05vw 0.1vw 0.02vw #293134, 0.2vw 0.1vw 0.2vw rgba(41, 49, 52, 0.5);
 }
 
@@ -62,14 +50,11 @@
   height: 48%;
   width: 20%;
   border-radius: 0.3vw;
-  background: -webkit-gradient(linear, left top, left bottom, from(#293134), color-stop(20%, #fff), color-stop(50%, #fff), to(rgba(99, 112, 121, 0)));
   background: linear-gradient(180deg, #293134 0%, #fff 20%, #fff 50%, rgba(99, 112, 121, 0) 100%);
   padding: 1px 2px 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 2;
   opacity: 0;
-  -webkit-transition: bottom 0.4s ease-in-out;
   transition: bottom 0.4s ease-in-out;
 }
 
@@ -107,7 +92,6 @@
 
 @media screen and (min-aspect-ratio: 16/9) {
   .four-btns {
-    -webkit-box-shadow: inset 0 0.26666667vh 0.53333333vh 0.08888889vh #293134;
     box-shadow: inset 0 0.26666667vh 0.53333333vh 0.08888889vh #293134;
     padding: 1.24444444vh;
     border-radius: 0.53333333vh;
@@ -115,12 +99,10 @@
 
   .four-btn {
     font-size: 2.2222222vh;
-    -webkit-box-shadow: 0 0.26666667vh 0.53333333vh 0.08888889vh #293134, 0.08888889vh 0.35555556vh 0.88888889vh rgba(41, 49, 52, 0.5);
     box-shadow: 0 0.26666667vh 0.53333333vh 0.08888889vh #293134, 0.08888889vh 0.35555556vh 0.88888889vh rgba(41, 49, 52, 0.5);
   }
 
   .four-btn:active {
-    -webkit-box-shadow: 0 0.08888889vh 0.17777778vh 0.03555556vh #293134, 0.35555556vh 0.17777778vh 0.35555556vh rgba(41, 49, 52, 0.5);
     box-shadow: 0 0.08888889vh 0.17777778vh 0.03555556vh #293134, 0.35555556vh 0.17777778vh 0.35555556vh rgba(41, 49, 52, 0.5);
   }
 

@@ -21,7 +21,6 @@
   background: #434e52;
   width: 6%;
   height: 8%;
-  -webkit-box-shadow: 5vw 0 0 #434e52, 0 4vw 0 0 #434e52, 5vw 4vw 0 #434e52;
   box-shadow: 5vw 0 0 #434e52, 0 4vw 0 0 #434e52, 5vw 4vw 0 #434e52;
 }
 
@@ -35,7 +34,6 @@
   background: #fff;
   width: 3%;
   height: 5%;
-  -webkit-box-shadow: 5vw 0 0 #fff, 0 4vw 0 0 #fff, 5vw 4vw 0 #fff;
   box-shadow: 5vw 0 0 #fff, 0 4vw 0 0 #fff, 5vw 4vw 0 #fff;
 }
 
@@ -53,16 +51,12 @@
   user-select: none;
   border: none;
   padding: 0;
-  -webkit-box-shadow: #732539 0 1.4625vw, #868CA3 0.73125vw 1.4625vw;
   box-shadow: #732539 0 1.4625vw, #868CA3 0.73125vw 1.4625vw;
   text-decoration: none;
   -o-border-image: initial;
   border-image: initial;
   outline: none;
-  -webkit-transition: margin-top 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
-  transition: margin-top 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out, margin-top 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, margin-top 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
   z-index: 1;
   left: 0;
   right: 0;
@@ -78,7 +72,6 @@
   position: absolute;
   top: 50%;
   height: 1.4625vw;
-  -webkit-transition: height 0.2s ease-in-out;
   transition: height 0.2s ease-in-out;
 }
 
@@ -94,7 +87,6 @@
 }
 
 .main-btn:active {
-  -webkit-box-shadow: #732539 0 0.4875vw, #868CA3 0.24375vw 0.4875vw;
   box-shadow: #732539 0 0.4875vw, #868CA3 0.24375vw 0.4875vw;
   margin-top: 0.975vw;
 }
@@ -103,19 +95,24 @@
   height: 0.4875vw;
 }
 
+.main-btn-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5vw;
+  height: 1.5vw;
+}
+
 @media screen and (min-aspect-ratio: 16/9) {
   .main-btn-block::before {
-    -webkit-box-shadow: 9vh 0 0 #434e52, 0 7vh 0 0 #434e52, 9vh 7vh 0 #434e52;
     box-shadow: 9vh 0 0 #434e52, 0 7vh 0 0 #434e52, 9vh 7vh 0 #434e52;
   }
 
   .main-btn-block::after {
-    -webkit-box-shadow: 9vh 0 0 #fff, 0 7vh 0 0 #fff, 9vh 7vh 0 #fff;
     box-shadow: 9vh 0 0 #fff, 0 7vh 0 0 #fff, 9vh 7vh 0 #fff;
   }
 
   .main-btn {
-    -webkit-box-shadow: #732539 0 2.6vh, #868CA3 1.3vh 2.6vh;
     box-shadow: #732539 0 2.6vh, #868CA3 1.3vh 2.6vh;
   }
 
@@ -124,12 +121,19 @@
   }
 
   .main-btn:active {
-    -webkit-box-shadow: #732539 0 0.8666666vh, #868CA3 0.43333333vh 0.8666666vh;
     box-shadow: #732539 0 0.8666666vh, #868CA3 0.43333333vh 0.8666666vh;
     margin-top: 1.733333vh;
   }
 
   .main-btn:active::before {
     height: 0.8666666vh;
+  }
+
+  .main-btn-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2.66666666vh;
+    height: 2.66666666vh;
   }
 }

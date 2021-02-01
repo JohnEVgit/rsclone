@@ -13,10 +13,10 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-group-css-media-queries": "^1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-terser": "^2.0.1"
   },
   "browserslist": [
-    "last 2 version"
+    "defaults"
   ],
   "repository": {
     "type": "git",
