@@ -253,12 +253,141 @@ button {
 
 
 
+.body-coffee-show {
+  .main-coffee-block {
+    z-index: 5;
+    opacity: 1;
+    &::before {
+      display: none;
+    }
+  }
+}
+.main-coffee-block {
+  position: absolute;
+  left: 26%;
+  top: 48%;
+  border-radius: 0.3vw;
+  border: 0.2vw solid #7A868A;
+  width: 11%;
+  height: 28%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+}
+.main-coffee {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  margin: auto;
+  background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    border-radius: 50%;
+    background: linear-gradient(to right, #454a51 0%, #8a8ea3 60%, #696e78 100%);
+    transform: translateY(-50%);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    border-radius: 50%;
+    background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+    transform: translateY(50%);
+    border: 0.15vw solid #61646b;
+    box-sizing: border-box;
+  }
+}
+.main-coffee-inner-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+  z-index: 2;
+}
+.main-coffee-inner-top {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 50%;
+    background: #3f3230;
+    transform: translateY(30%);
+    z-index: 1;
+  }
+}
+.body-coffee-drink1 .main-coffee-inner-top::before {
+  transform: translateY(55%);
+}
+.body-coffee-drink2 .main-coffee-inner-top::before {
+  transform: translateY(80%);
+}
+.body-coffee-drink3 .main-coffee-inner-top::before {
+  transform: translateY(105%);
+}
 
-
-
-
-
-
+.main-coffee-shadow {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  left: 46%;
+  bottom: 16%;
+  margin: auto;
+  background: rgba(75, 80, 98, 0.6);
+}
+.main-coffee-shadow2 {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  left: 96%;
+  bottom: 16%;
+  margin: auto;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background: rgba(75, 80, 98, 0.6);
+  }
+}
 
 
 

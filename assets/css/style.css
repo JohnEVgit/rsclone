@@ -660,6 +660,168 @@ button {
   position: relative;
 }
 
+.body-coffee-show .main-coffee-block {
+  z-index: 5;
+  opacity: 1;
+}
+
+.body-coffee-show .main-coffee-block::before {
+  display: none;
+}
+
+.main-coffee-block {
+  position: absolute;
+  left: 26%;
+  top: 48%;
+  border-radius: 0.3vw;
+  border: 0.2vw solid #7A868A;
+  width: 11%;
+  height: 28%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-coffee-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.main-coffee {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, right top, from(#898b98), color-stop(30%, #caced6), to(#454f55));
+  background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+}
+
+.main-coffee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#454a51), color-stop(60%, #8a8ea3), to(#696e78));
+  background: linear-gradient(to right, #454a51 0%, #8a8ea3 60%, #696e78 100%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.main-coffee::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#898b98), color-stop(30%, #caced6), to(#454f55));
+  background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  border: 0.15vw solid #61646b;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.main-coffee-inner-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: -webkit-gradient(linear, left top, right top, from(#898b98), color-stop(30%, #caced6), to(#454f55));
+  background: linear-gradient(to right, #898b98 0%, #caced6 30%, #454f55 100%);
+  z-index: 2;
+}
+
+.main-coffee-inner-top {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main-coffee-inner-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 50%;
+  background: #3f3230;
+  -webkit-transform: translateY(30%);
+  transform: translateY(30%);
+  z-index: 1;
+}
+
+.body-coffee-drink1 .main-coffee-inner-top::before {
+  -webkit-transform: translateY(55%);
+  transform: translateY(55%);
+}
+
+.body-coffee-drink2 .main-coffee-inner-top::before {
+  -webkit-transform: translateY(80%);
+  transform: translateY(80%);
+}
+
+.body-coffee-drink3 .main-coffee-inner-top::before {
+  -webkit-transform: translateY(105%);
+  transform: translateY(105%);
+}
+
+.main-coffee-shadow {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  left: 46%;
+  bottom: 16%;
+  margin: auto;
+  background: rgba(75, 80, 98, 0.6);
+}
+
+.main-coffee-shadow2 {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  left: 96%;
+  bottom: 16%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.main-coffee-shadow2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: rgba(75, 80, 98, 0.6);
+}
+
 .main-table-bottom {
   height: 28%;
   border-top: 2px solid #fff;
@@ -1070,12 +1232,14 @@ button {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-bottom: 1%;
+  padding-bottom: 0.8%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 0.8vw;
+  font-size: 0.6875vw;
   color: transparent;
   line-height: 1em;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
 }
 
 .achievement-elem.active {
@@ -1099,12 +1263,12 @@ button {
 }
 
 .achievement-elem1 {
-  width: 6%;
-  height: 14%;
-  left: 3%;
-  top: 39%;
-  -webkit-transform: rotate(4deg);
-  transform: rotate(4deg);
+  width: 8%;
+  height: 10%;
+  left: 2%;
+  top: 25%;
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
 }
 
 .achievement-elem2 {
@@ -1196,12 +1360,12 @@ button {
 }
 
 .achievement-elem12 {
-  width: 8%;
-  height: 10%;
-  left: 2%;
-  top: 25%;
-  -webkit-transform: rotate(-4deg);
-  transform: rotate(-4deg);
+  width: 6%;
+  height: 14%;
+  left: 3%;
+  top: 39%;
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
 }
 
 .main-instruction {
@@ -3628,7 +3792,9 @@ button {
   }
 
   .achievement-elem {
-    font-size: 1.42222222vh;
+    font-size: 1.22222222vh;
+    padding-left: 0.88888888vh;
+    padding-right: 0.88888889vh;
   }
 
   .achievement-elem.active::before {

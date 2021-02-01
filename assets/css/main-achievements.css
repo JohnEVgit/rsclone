@@ -11,12 +11,14 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-bottom: 1%;
+  padding-bottom: 0.8%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 0.8vw;
+  font-size: 0.6875vw;
   color: transparent;
   line-height: 1em;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
 }
 
 .achievement-elem.active {
@@ -40,12 +42,12 @@
 }
 
 .achievement-elem1 {
-  width: 6%;
-  height: 14%;
-  left: 3%;
-  top: 39%;
-  -webkit-transform: rotate(4deg);
-  transform: rotate(4deg);
+  width: 8%;
+  height: 10%;
+  left: 2%;
+  top: 25%;
+  -webkit-transform: rotate(-4deg);
+  transform: rotate(-4deg);
 }
 
 .achievement-elem2 {
@@ -137,17 +139,19 @@
 }
 
 .achievement-elem12 {
-  width: 8%;
-  height: 10%;
-  left: 2%;
-  top: 25%;
-  -webkit-transform: rotate(-4deg);
-  transform: rotate(-4deg);
+  width: 6%;
+  height: 14%;
+  left: 3%;
+  top: 39%;
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
 }
 
 @media screen and (min-aspect-ratio: 16/9) {
   .achievement-elem {
-    font-size: 1.42222222vh;
+    font-size: 1.22222222vh;
+    padding-left: 0.88888888vh;
+    padding-right: 0.88888889vh;
   }
 
   .achievement-elem.active::before {

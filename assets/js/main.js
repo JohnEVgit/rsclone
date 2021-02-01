@@ -5,27 +5,27 @@ const config = {
     peacefulEndingDialogClass: 'peacefulEndingDialog',
     endGameDialogClass: 'endGameDialogClass',
     gameLanguage: localStorage.getItem('gameLanguage') ? localStorage.getItem('gameLanguage') : 'en',
-    gameCount: localStorage.getItem('gameCount') ? localStorage.getItem('gameCount') : 0,
+    gameCount: localStorage.getItem('gameCount') ? +localStorage.getItem('gameCount') : 0,
     dialogCount: 0,
     mainBtnCount: 0,
     resetBtnCount: 0,
-    achievementCount: localStorage.getItem('achievementCount') ? localStorage.getItem('achievementCount') : 0,
+    achievementCount: localStorage.getItem('achievementCount') ? +localStorage.getItem('achievementCount') : 0,
     achievementList: localStorage.getItem('achievementList') ? localStorage.getItem('achievementList') : '',
     canDialogClick: true,
     bodyElem: document.body,
     mainBtnElem: document.querySelector('.main-btn'),
     resetBtnElem: document.querySelector('.reset-btn'),
     menuBtnsList: document.querySelectorAll('.menu-btn'),
+    achievementElemsList: document.querySelectorAll('.achievement-elem'),
     waitPeacefulEnding: null,
 
-    volume: localStorage.getItem('volume') ? localStorage.getItem('volume') : 0.8,
+    volume: localStorage.getItem('volume') ? +localStorage.getItem('volume') : 0.8,
     volumeElem: document.querySelector('.menu-volume'),
     audio: null,
-    audioStart: './assets/audio/pdta-start.mp3',
-    audioMain: './assets/audio/pdta-main.mp3',
-    audioEnding: './assets/audio/pdta-ending.mp3',
-    audioEnding2: './assets/audio/pdta-ending2.mp3',
-    audioRobot: './assets/audio/pdta-ending.mp3',
+    audioStart: 'https://t4.bcbits.com/stream/fdfd9543ee6ca95306fa6c73bbaf9175/mp3-128/1128407927?p=0&ts=1612223905&t=030b352e0b55d8855c7fb1b9de133f70d5f0e9fc&token=1612223905_ebca324ecd5c299d7ea285ff4409dfb39bd17341',
+    audioMain: 'https://t4.bcbits.com/stream/8776bff815754f728a2ed73400da216a/mp3-128/956859200?p=0&ts=1612176387&t=c8f3537dd24d35ee53e1b3d4323cd193c074faa7&token=1612176387_ffae53f4378c2015feb7f2fb0059f0d1e7b1854e',
+    audioEnding: 'https://t4.bcbits.com/stream/0532d1055e23532da8900f39bbeb76b7/mp3-128/73277956?p=0&ts=1612223905&t=54af0f0744e722a3681a64a1cff53118d491290b&token=1612223905_8b0513643b9c05e80b886a96aa1f35c2be248c69',
+    audioEnding2: 'https://t4.bcbits.com/stream/4a2f3e3f8e64d55d501187d397e67285/mp3-128/466422724?p=0&ts=1612224154&t=2f5c1df254c8d74370d8a143dd6edbc9caaca85b&token=1612224154_c11bd1af70ce477dd46a860a0e0d18b4734efc07',
 
     isMushroomBtnSwitch: false,
 
@@ -62,6 +62,8 @@ const config = {
 
     fourBtnCod: [],
 
+    drinkCoffeeCount: 0,
+
     lang: {
         en: {
             startDialog: [
@@ -93,6 +95,61 @@ const config = {
                 {phrase: 'Ok, but don\'t take it too long.', position: 'right'},
             ],
             menu: ['Resume game','Language','Fullscreen','Delete savegame','Exit game'],
+            achievements: ['Peaceful',
+                'Disobedience',
+                'Mushroom Cloud',
+                'Bender',
+                'UFO',
+                'Green',
+                'We are Watching',
+                'Yin-Yang',
+                'Back to the Future',
+                'Satanic',
+                'Black Hole',
+                'Meteors'],
+        },
+        by: {
+            startDialog: [
+                {phrase: '...Гэй, хлопец!', position: 'left'},
+                {phrase: 'Хлопец!', position: 'left'},
+                {phrase: 'Мне трэба адысці ў туалет, пачакай мяне тут!', position: 'left'},
+                {phrase: 'Пачакай! А для чаго гэтая панэль?', position: 'right'},
+                {phrase: 'Проста пастой тут, я хутка вярнуся!', position: 'left'},
+                {phrase: '...і нічога не чапай!', position: 'left'},
+            ],
+            peacefulEndingDialog: [
+                {phrase: '...Крута. Дзякуй! Ты мяне выбавіў.', position: 'left'},
+                {phrase: 'Ты чаго так доўга? Магло што-небудзь здарыцца.', position: 'right'},
+                {phrase: 'Праўда?', position: 'left'},
+                {phrase: 'Што напрыклад, апакаліпсіс?', position: 'left'},
+                {phrase: 'Патрэбна як мінімум вышэйшая адукацыя, каб кіравацца з гэтай машынай.', position: 'left'},
+                {phrase: 'Пайшлі.', position: 'left'},
+            ],
+            endGameDialogClass: [
+                {phrase: '...Гэй, хлопец!', position: 'left'},
+                {phrase: 'Хлопец!', position: 'left'},
+                {phrase: 'Мне трэба адысці ў туалет, пачакай мяне тут!', position: 'left'},
+                {phrase: 'Пачакай! А для чаго гэтая панэль?', position: 'right'},
+                {phrase: 'А, нічога асаблівага, проста кавамашына.', position: 'left'},
+                {phrase: 'А чаму такая дзіўная?', position: 'right'},
+                {phrase: 'Ды не ведаю. Яна проста аднойчы тут з\'явілася.', position: 'left'},
+                {phrase: 'Часам паказвае рэкламу на экране.', position: 'left'},
+                {phrase: 'Можаш заказаць каву, пакуль мяне няма. Вунь чырвоная кнопка.', position: 'left'},
+                {phrase: 'Добра, але не затрымлівайся.', position: 'right'},
+            ],
+            menu: ['Працягнуць','Мова гульні','Поуны экран','Выдаліць захаванне','Выхад'],
+            achievements: ['Памяркоўнасць',
+                'Ганаровы націскач',
+                'Ядзерны выбух',
+                'Бэндэр',
+                'НЛА',
+                'Расліна',
+                'Ілюмінаты',
+                'Інь Янь',
+                'Назад у будучыню',
+                'Жах сатаны',
+                'Чорная дзірка',
+                'Метэарытны дождж'],
         },
         ru: {
             startDialog: [
@@ -124,6 +181,18 @@ const config = {
                 {phrase: 'Хорошо, но не задерживайся.', position: 'right'},
             ],
             menu: ['Продолжить','Язык игры','Полный экран','Удалить сохранение','Выход'],
+            achievements: ['Терпимость',
+                'Почётный нажиматель',
+                'Ядерный взрыв',
+                'Бендер',
+                'НЛО',
+                'Растение',
+                'Иллюминаты',
+                'Инь Янь',
+                'Назад в будущее',
+                'Ужас сатаны',
+                'Чёрная дыра',
+                'Метеоритный дождь'],
         }
     }
 };
@@ -155,6 +224,8 @@ const init = () => {
     }
 
     showAchievements();
+    changeMenuLanguage();
+    changeAchievementsLanguage();
     menuEvents();
     mainEvents();
     resetGame();
@@ -189,6 +260,7 @@ const chooseLanguage = (isMenu) => {
             }
 
             changeMenuLanguage();
+            changeAchievementsLanguage();
         });
 
     });
@@ -197,6 +269,11 @@ const chooseLanguage = (isMenu) => {
 const changeMenuLanguage = () => {
     config.menuBtnsList.forEach(function(btn,i) {
         btn.textContent = config.lang[config.gameLanguage].menu[i];
+    });
+};
+const changeAchievementsLanguage = () => {
+    config.achievementElemsList.forEach(function(elem,i) {
+        elem.textContent = config.lang[config.gameLanguage].achievements[i];
     });
 };
 
@@ -360,7 +437,11 @@ const resetGame = () => {
         waitPeacefulEnding();
 
         pauseAudio();
-        config.audio.src = config.audioStart;
+        if (config.achievementCount === 13) {
+            config.audio.src = config.audioEnding2;
+        } else {
+            config.audio.src = config.audioStart;
+        }
         config.audio.play();
 
         if (config.achievementCount === 12) {
@@ -408,8 +489,7 @@ const getAchievement = (number) => {
     }
 };
 const clearAchievements = () => {
-    const achievementElems = document.querySelectorAll('.achievement-elem');
-    achievementElems.forEach(function(elem) {
+    config.achievementElemsList.forEach(function(elem) {
         elem.classList.remove('active');
     });
 
@@ -450,6 +530,16 @@ const resetConfig = () => {
     config.isSwitchSecondRight = false;
     config.isBenderBtnStart = false;
     config.benderBtnCod = [];
+    config.isDditBtnStart = false;
+    config.dditBtnCod = [];
+    config.isColorBtnStart = false;
+    config.colorBtnCod = [];
+    config.isPhoneBtnStart = false;
+    config.isPhoneBtnActive = false;
+    config.phoneBtnCod = [];
+    config.satanicBtnCod = [];
+    config.fourBtnCod = [];
+    config.drinkCoffeeCount = 0;
 
 };
 const clearConfig = () => {
@@ -458,8 +548,6 @@ const clearConfig = () => {
     config.dialogCount = 0;
     config.achievementCount = 0;
     config.achievementList = '';
-
-
 };
 
 const blockBtns = () => {
@@ -469,7 +557,11 @@ const blockBtns = () => {
 
 
 const initAudio = () => {
-    config.audio = new Audio(config.audioStart);
+    if (config.achievementCount === 13) {
+        config.audio = new Audio(config.audioEnding2);
+    } else {
+        config.audio = new Audio(config.audioStart);
+    }
     config.audio.loop = true;
     config.audio.volume = config.volume;
 
@@ -512,7 +604,6 @@ const mainEvents = () => {
         })
     });
 
-
     document.querySelector('.counter-btn-submit').addEventListener('click', function () {
         activeCounterBtnSubmit();
     });
@@ -544,6 +635,10 @@ const mainEvents = () => {
         })
     });
 
+    document.querySelector('.main-coffee').addEventListener('click', function () {
+        drinkCoffee();
+    });
+
 };
 const clearBodyClassList = () => {
     let classListArr = config.bodyElem.classList;
@@ -555,6 +650,7 @@ const mainBtnEvent = () => {
     config.mainBtnCount++;
 
     if ( config.achievementCount >= 12 ) {
+        config.bodyElem.classList.remove('body-coffee-drink3');
         config.bodyElem.classList.add('body-coffee-show');
         return false;
     }
@@ -967,6 +1063,24 @@ const changeNumbersShow = (elem) => {
         }
     }
 
+};
+
+const drinkCoffee = () => {
+    if (config.drinkCoffeeCount === 0) {
+        config.bodyElem.classList.add('body-coffee-drink1');
+        config.drinkCoffeeCount++;
+    } else if (config.drinkCoffeeCount === 1) {
+        config.bodyElem.classList.remove('body-coffee-drink1');
+        config.bodyElem.classList.add('body-coffee-drink2');
+        config.drinkCoffeeCount++;
+    } else if (config.drinkCoffeeCount === 2) {
+        config.bodyElem.classList.remove('body-coffee-drink2');
+        config.bodyElem.classList.add('body-coffee-drink3');
+        config.drinkCoffeeCount++;
+    } else {
+        config.bodyElem.classList.remove('body-coffee-show');
+        config.drinkCoffeeCount = 0;
+    }
 };
 
 showFirstScreen();
