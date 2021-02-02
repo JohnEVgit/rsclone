@@ -1672,6 +1672,13 @@ button {
   background: red;
 }
 
+.body-main-screen-switch-off .main-screen::before {
+  background: #000;
+  -webkit-animation: 0;
+  animation: 0;
+  opacity: 1;
+}
+
 .main-btn-block {
   position: absolute;
   left: 0;
@@ -2107,14 +2114,32 @@ button {
   top: 0;
   bottom: 0;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch-second-left::before,
+.switch-second-right::before {
+  font-size: 0.8vw;
+  opacity: 0.3;
+  text-transform: uppercase;
 }
 
 .switch-second-left {
   left: 0;
 }
 
+.switch-second-left::before {
+  content: '❮ click';
+}
+
 .switch-second-right {
   right: 0;
+}
+
+.switch-second-right::before {
+  content: 'click ❯';
 }
 
 .body-switch-second-left .switch-second-cover,
@@ -3727,6 +3752,11 @@ button {
     border: 0.26666666vh solid #3F4D54;
   }
 
+  .switch-second-left::before,
+  .switch-second-right::before {
+    font-size: 1.42222222vh;
+  }
+
   .body-switch-second-left .switch-second-inner,
   .body-switch-second-right .switch-second-inner {
     box-shadow: 0 0 0.35555556vh #732539, 0.35555556vh 0.35555556vh 0.35555556vh 0.17777777vh rgba(41, 49, 52, 0.2);
@@ -3853,7 +3883,7 @@ button {
 
   .screwdriver-elem {
     width: 0.53333333vh;
-    height: 6vw;
+    height: 10.66666666vh;
     box-shadow: 0.53333333vh 0.53333333vh 0 rgba(69, 72, 82, 0.38);
   }
 

@@ -233,7 +233,13 @@
 .body-main-screen-crush .main-screen {
   background: red;
 }
-
+.body-main-screen-switch-off {
+  .main-screen::before {
+    background: #000;
+    animation: 0;
+    opacity: 1;
+  }
+}
 
 @media screen and (min-aspect-ratio: ~'16/9') {
 
