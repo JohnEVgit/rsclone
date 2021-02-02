@@ -852,6 +852,50 @@ config.screwdriverElem.onmousedown = function(e) {
         config.currentDroppable = null;
     };
 };
+config.screwdriverElem.ontouchstart = function(e) {
+
+    let shiftX = e.touches[0].clientX - config.screwdriverElem.getBoundingClientRect().left;
+    let shiftY = e.touches[0].clientY - config.screwdriverElem.getBoundingClientRect().top;
+
+    config.screwdriverElem.style.position = 'absolute';
+    config.screwdriverElem.style.zIndex = 1000;
+    config.bodyElem.append(config.screwdriverElem);
+
+    moveAt(e.touches[0].pageX, e.touches[0].pageY);
+
+    function moveAt(pageX, pageY) {
+        config.screwdriverElem.style.left = pageX - shiftX + 'px';
+        config.screwdriverElem.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(e) {
+        moveAt(e.touches[0].pageX, e.touches[0].pageY);
+    }
+
+    document.addEventListener('touchmove', onMouseMove);
+
+    config.screwdriverElem.ontouchend = function(e) {
+
+        config.screwdriverElem.hidden = true;
+        let elemBelow = document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+        config.screwdriverElem.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.color-btns-outer');
+        if (config.currentDroppable !== droppableBelow) {
+            config.currentDroppable = droppableBelow;
+            if (config.currentDroppable) {
+                config.bodyElem.classList.add('body-color-btns-show');
+            }
+        }
+        document.querySelector('.screwdriver-top-inner').appendChild(config.screwdriverElem);
+        config.screwdriverElem.removeAttribute('style');
+        document.removeEventListener('touchmove', onMouseMove);
+        config.screwdriverElem.ontouchend = null;
+        config.currentDroppable = null;
+    };
+};
 config.screwdriverElem.ondragstart = function() {
     return false;
 };
@@ -899,6 +943,51 @@ config.hammerElem.onmousedown = function(e) {
         config.hammerElem.removeAttribute('style');
         document.removeEventListener('mousemove', onMouseMove);
         config.hammerElem.onmouseup = null;
+        config.currentDroppable = null;
+    };
+};
+config.hammerElem.ontouchstart = function(e) {
+    let shiftX = e.touches[0].clientX - config.hammerElem.getBoundingClientRect().left;
+    let shiftY = e.touches[0].clientY - config.hammerElem.getBoundingClientRect().top;
+
+    config.hammerElem.style.position = 'absolute';
+    config.hammerElem.style.zIndex = 1000;
+    config.bodyElem.append(config.hammerElem);
+
+    moveAt(e.touches[0].pageX, e.touches[0].pageY);
+
+    function moveAt(pageX, pageY) {
+        config.hammerElem.style.left = pageX - shiftX + 'px';
+        config.hammerElem.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(e) {
+        moveAt(e.touches[0].pageX, e.touches[0].pageY);
+    }
+
+    document.addEventListener('touchmove', onMouseMove);
+
+    config.hammerElem.ontouchend = function(e) {
+
+        config.hammerElem.hidden = true;
+        let elemBelow = document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+        config.hammerElem.hidden = false;
+
+        if (!elemBelow) return;
+
+        let droppableBelow = elemBelow.closest('.main-screen');
+        if (config.currentDroppable !== droppableBelow) {
+            config.currentDroppable = droppableBelow;
+            if (config.currentDroppable) {
+                clearBodyClassList();
+                config.bodyElem.classList.add('body-main-screen-crush');
+                getAchievement(7);
+            }
+        }
+        document.querySelector('.hammer-top-inner').appendChild(config.hammerElem);
+        config.hammerElem.removeAttribute('style');
+        document.removeEventListener('touchmove', onMouseMove);
+        config.hammerElem.ontouchend = null;
         config.currentDroppable = null;
     };
 };
