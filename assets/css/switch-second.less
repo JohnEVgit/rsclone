@@ -75,12 +75,26 @@
   top: 0;
   bottom: 0;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    font-size: 0.8vw;
+    opacity: 0.3;
+    text-transform: uppercase;
+  }
 }
 .switch-second-left {
   left: 0;
+  &::before {
+    content: '❮ click';
+  }
 }
 .switch-second-right {
   right: 0;
+  &::before {
+    content: 'click ❯';
+  }
 }
 
 
@@ -155,6 +169,12 @@
       border-radius: 1.7777777vh 1.7777777vh 0 0;
       box-shadow: 0 0 0.3555555555vh #636f79;
       border: 0.26666666vh solid #3F4D54;
+    }
+  }
+  .switch-second-left,
+  .switch-second-right {
+    &::before {
+      font-size: 1.42222222vh;
     }
   }
   .body-switch-second-left,

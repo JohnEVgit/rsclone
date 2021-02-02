@@ -693,6 +693,7 @@ const mainBtnEvent = () => {
             break;
         case 20:
             getAchievement(2);
+            config.bodyElem.classList.add('body-main-screen-switch-off');
             break;
     }
 
@@ -808,6 +809,7 @@ const activeCounterBtnSubmit = () => {
 
 
 config.screwdriverElem.onmousedown = function(e) {
+
     let shiftX = e.clientX - config.screwdriverElem.getBoundingClientRect().left;
     let shiftY = e.clientY - config.screwdriverElem.getBoundingClientRect().top;
 
@@ -847,6 +849,7 @@ config.screwdriverElem.onmousedown = function(e) {
         config.screwdriverElem.removeAttribute('style');
         document.removeEventListener('mousemove', onMouseMove);
         config.screwdriverElem.onmouseup = null;
+        config.currentDroppable = null;
     };
 };
 config.screwdriverElem.ondragstart = function() {
@@ -896,6 +899,7 @@ config.hammerElem.onmousedown = function(e) {
         config.hammerElem.removeAttribute('style');
         document.removeEventListener('mousemove', onMouseMove);
         config.hammerElem.onmouseup = null;
+        config.currentDroppable = null;
     };
 };
 config.hammerElem.ondragstart = function() {
@@ -965,6 +969,7 @@ const activeSatanicBtns = (thisElem) => {
     if (config.satanicBtnCod.length >= 5) {
         if (config.satanicBtnCod.join() === [14,31,37,72,76].join()) {
             clearBodyClassList();
+            config.bodyElem.classList.add('body-main-screen-crush');
             getAchievement(10);
         }
         config.satanicBtnCod = [];
