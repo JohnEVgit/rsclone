@@ -1,0 +1,125 @@
+.main-btn-block {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 6%;
+  margin: auto;
+  border-radius: 0.3vw;
+  border: 0.2vw solid #7A868A;
+  width: 9%;
+  height: 22%;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7%;
+    top: 8%;
+    margin: auto;
+    border-radius: 50%;
+    background: #434e52;
+    width: 6%;
+    height: 8%;
+    box-shadow: 5vw 0 0 #434e52, 0 4vw 0 0 #434e52, 5vw 4vw 0 #434e52;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 7.3%;
+    top: 8.3%;
+    margin: auto;
+    border-radius: 50%;
+    background:#fff;
+    width: 3%;
+    height: 5%;
+    box-shadow: 5vw 0 0 #fff, 0 4vw 0 0 #fff, 5vw 4vw 0 #fff;
+  }
+}
+
+.main-btn {
+  position: absolute;
+  width: 80%;
+  height: 60%;
+  border-radius: 50%;
+  background: #BF3530;
+  display: inline-block;
+  font-weight: bold;
+  user-select: none;
+  border: none;
+  padding: 0;
+  box-shadow: #732539 0 1.4625vw, #868CA3 0.73125vw 1.4625vw;
+  text-decoration: none;
+  border-image: initial;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out, margin-top 0.2s ease-in-out;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -5%;
+  &::before {
+    content: '';
+    display: block;
+    background: #732539;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    height: 1.4625vw;
+    transition: height 0.2s ease-in-out;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #BF3530;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:active {
+    box-shadow: #732539 0 0.4875vw, #868CA3 0.24375vw 0.4875vw;
+    margin-top: 0.975vw;
+    &::before {
+      height: 0.4875vw;
+    }
+  }
+}
+.main-btn-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5vw;
+  height: 1.5vw;
+}
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .main-btn-block {
+    &::before {
+      box-shadow: 9vh 0 0 #434e52, 0 7vh 0 0 #434e52, 9vh 7vh 0 #434e52;
+    }
+    &::after {
+      box-shadow: 9vh 0 0 #fff, 0 7vh 0 0 #fff, 9vh 7vh 0 #fff;
+    }
+  }
+  .main-btn {
+    box-shadow: #732539 0 2.6vh, #868CA3 1.3vh 2.6vh;
+    &::before {
+      height: 2.6vh;
+    }
+    &:active {
+      box-shadow: #732539 0 0.8666666vh, #868CA3 0.43333333vh 0.8666666vh;
+      margin-top: 1.733333vh;
+      &::before {
+        height: 0.8666666vh;
+      }
+    }
+  }
+  .main-btn-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2.66666666vh;
+    height: 2.66666666vh;
+  }
+}
+

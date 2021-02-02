@@ -1,0 +1,139 @@
+
+.achievement-elem {
+  position: absolute;
+  background-color: #2C3339;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.8%;
+  box-sizing: border-box;
+  font-size: 0.6875vw;
+  color: transparent;
+  line-height: 1em;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  &.active {
+    background-color: #B0B3B5;
+    color: #222;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 25%;
+      margin: auto;
+      width: 2vw;
+      height: 0.75vw;
+      transform: rotate(-45deg);
+      border-left: 0.3vw solid #264a2d;
+      border-bottom: 0.3vw solid #264a2d;
+    }
+  }
+}
+
+.achievement-elem1 {
+  width: 8%;
+  height: 10%;
+  left: 2%;
+  top: 25%;
+  transform: rotate(-4deg);
+}
+.achievement-elem2 {
+  width: 8%;
+  height: 10%;
+  right: 20%;
+  top: 5%;
+  transform: rotate(2deg);
+}
+.achievement-elem3 {
+  width: 6%;
+  height: 14%;
+  right: 10%;
+  top: 4%;
+  transform: rotate(-2deg);
+}
+.achievement-elem4 {
+  width: 6%;
+  height: 14%;
+  right: 2%;
+  top: 3%;
+  transform: rotate(2deg);
+}
+.achievement-elem5 {
+  width: 6%;
+  height: 14%;
+  right: 24%;
+  top: 19%;
+  transform: rotate(-2deg);
+}
+
+.achievement-elem6 {
+  width: 6%;
+  height: 14%;
+  right: 17%;
+  top: 24%;
+  transform: rotate(2deg);
+}
+.achievement-elem7 {
+  width: 6%;
+  height: 14%;
+  right: 2%;
+  top: 21%;
+  transform: rotate(2deg);
+}
+.achievement-elem8 {
+  width: 6%;
+  height: 14%;
+  right: 5%;
+  top: 40%;
+  transform: rotate(-2deg);
+}
+.achievement-elem9 {
+  width: 8%;
+  height: 10%;
+  left: 12%;
+  top: 28%;
+  transform: rotate(1deg);
+}
+.achievement-elem10 {
+  width: 8%;
+  height: 10%;
+  left: 22%;
+  top: 27%;
+  transform: rotate(-4deg);
+}
+
+.achievement-elem11 {
+  width: 6%;
+  height: 14%;
+  right: 9.5%;
+  top: 23%;
+}
+
+.achievement-elem12 {
+  width: 6%;
+  height: 14%;
+  left: 3%;
+  top: 39%;
+  transform: rotate(4deg);
+}
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+
+  .achievement-elem {
+    font-size: 1.222222222vh;
+    padding-left: 0.88888888vh;
+    padding-right: 0.888888888vh;
+    &.active {
+      &::before {
+        width: 3.555555555vh;
+        height: 1.3333333333vh;
+        border-left: 0.5333333333vh solid #264a2d;
+        border-bottom: 0.5333333333vh solid #264a2d;
+      }
+    }
+  }
+
+}
+

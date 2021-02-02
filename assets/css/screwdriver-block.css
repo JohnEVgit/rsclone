@@ -1,0 +1,200 @@
+.body-screwdriver-block-show .screwdriver-block {
+  transform: translateX(0);
+}
+
+.body-screwdriver-block-show .screwdriver-block::before {
+  display: none;
+}
+
+.screwdriver-block {
+  position: absolute;
+  right: -11%;
+  left: 100%;
+  bottom: 39%;
+  height: 46%;
+  background: #8a8ea3;
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(-105%);
+  border-radius: 0 0.2vw 0.2vw 0;
+}
+
+.screwdriver-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.screwdriver-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 75%;
+  background: #afb3b6;
+  border: 0.6vw solid #d3d7e0;
+  border-left: none;
+  border-radius: 0 0.2vw 0.2vw 0;
+  box-sizing: border-box;
+  display: flex;
+  box-shadow: inset -0.1vw -0.1vw 0.1vw 0 #636f79;
+}
+
+.screwdriver-top::before {
+  content: '';
+  width: 3%;
+  top: -0.6vw;
+  bottom: -0.6vw;
+  left: 0;
+  background: #8a8ea3;
+  position: absolute;
+  z-index: 1;
+}
+
+.screwdriver-top::after {
+  content: '';
+  position: absolute;
+  width: 1.9vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #8a8ea3;
+}
+
+.screwdriver-top-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screwdriver-top-inner-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 32%;
+  background: #636f79;
+  z-index: 1;
+}
+
+.screwdriver-top-inner-top::before {
+  content: '';
+  left: 0;
+  border-style: solid;
+  border-width: 3.6vw 0 0 1.9vw;
+  border-color: transparent transparent transparent #3f4e54;
+  bottom: 0;
+  position: absolute;
+}
+
+.screwdriver-elem {
+  position: relative;
+  width: 0.3vw;
+  height: 6vw;
+  background: linear-gradient(to right, #8a8ea3 0%, #8a8ea3 55%, #3f4e54 85%, #3f4e54 100%);
+  z-index: 10;
+  box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
+}
+
+.screwdriver-elem::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  right: -100%;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(to right, #1c241b 0%, #3f4e54 50%, #293134 100%);
+  box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
+}
+
+.screwdriver-elem::after {
+  content: '';
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  top: 0;
+  height: 10%;
+  background: linear-gradient(to right, #8a8ea3 0%, #8a8ea3 55%, #3f4e54 85%, #3f4e54 100%);
+  box-shadow: 0.3vw 0.3vw 0 rgba(69, 72, 82, 0.38);
+}
+
+.screwdriver-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25%;
+  background: #636f79;
+  border-radius: 0 0 0.2vw 0;
+  border-right: 0.15vw solid #8a8ea3;
+  border-bottom: 0.15vw solid #293134;
+  box-sizing: border-box;
+}
+
+.screwdriver-bottom::before {
+  content: '';
+  left: 0;
+  border-style: solid;
+  border-width: 4vw 0 0 2.1875vw;
+  border-color: transparent transparent transparent #3f4e54;
+  bottom: 0;
+  position: absolute;
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .screwdriver-block {
+    border-radius: 0 0.35555555vh 0.35555555vh 0;
+  }
+
+  .screwdriver-top {
+    border: 1.06666666vh solid #d3d7e0;
+    border-left: none;
+    border-radius: 0 0.35555555vh 0.35555555vh 0;
+    box-shadow: inset -0.17777777vh -0.17777778vh 0.17777778vh 0 #636f79;
+  }
+
+  .screwdriver-top::before {
+    top: -1.06666666vh;
+    bottom: -1.06666666vh;
+  }
+
+  .screwdriver-top::after {
+    width: 3.37777778vh;
+  }
+
+  .screwdriver-top-inner-top::before {
+    border-width: 6.34vh 0 0 3.37777778vh;
+  }
+
+  .screwdriver-bottom {
+    border-radius: 0 0 0.35555555vh 0;
+    border-right: 0.26666667vh solid #8a8ea3;
+    border-bottom: 0.26666667vh solid #293134;
+  }
+
+  .screwdriver-bottom::before {
+    border-width: 7.11111111vh 0 0 3.88888888vh;
+  }
+
+  .screwdriver-elem {
+    width: 0.53333333vh;
+    height: 10.66666666vh;
+    box-shadow: 0.53333333vh 0.53333333vh 0 rgba(69, 72, 82, 0.38);
+  }
+
+  .screwdriver-elem::before {
+    box-shadow: 0.53333333vh 0.53333333vh 0 rgba(69, 72, 82, 0.38);
+  }
+
+  .screwdriver-elem::after {
+    box-shadow: 0.53333333vh 0.53333333vh 0 rgba(69, 72, 82, 0.38);
+  }
+}

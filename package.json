@@ -1,0 +1,31 @@
+{
+  "name": "rsclone",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "fs-extra": "^2",
+    "gulp": "^4",
+    "gulp-less": "^4",
+    "gulp-task-listing": "^1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^7",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1",
+    "gulp-terser": "^2.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JohnEVgit/rsclone.git"
+  },
+  "author": "JohnEVgit",
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/JohnEVgit/rsclone/issues"
+  },
+  "homepage": "https://github.com/JohnEVgit/rsclone#README"
+}

@@ -1,0 +1,144 @@
+.phone-btns {
+  position: absolute;
+  right: 22%;
+  top: 10%;
+  width: 16%;
+  height: 42%;
+  display: flex;
+  flex-wrap: wrap;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+.body-phone-btn-show {
+  .phone-btns {
+    opacity: 1;
+    &::before {
+      display: none;
+    }
+  }
+  .phone-btn-inner-front {
+    transform: rotateY(180deg);
+    opacity: 1;
+  }
+  .phone-btn-inner-back {
+    border: 0.15vw solid #636f79;
+    transform: rotateY(360deg);
+  }
+}
+.phone-btn {
+  width: 28%;
+  height: 22%;
+  margin: auto;
+  border-radius: 10%;
+  box-sizing: border-box;
+  font-size: 1.6vw;
+  color: #264a2d;
+  perspective: 10vw;
+  &:active {
+    .phone-btn-inner-back {
+      box-shadow: inset 0 0.3vw 0.4vw 0 #000;
+      padding-top: 0.3vw;
+    }
+  }
+}
+.phone-btn-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #B0B3B5;
+  border-radius: 10%;
+  transition: transform 0.5s ease-in-out;
+  backface-visibility: hidden;
+}
+.phone-btn-inner-front {
+  opacity: 1;
+}
+.phone-btn-inner-back {
+  border: 0.15vw solid #636f79;
+  transform: rotateY(180deg);
+}
+.phone-btn {
+  &[data-phone="1"] {
+    .phone-btn-inner {
+      transition-delay: 0.05s;
+    }
+  }
+  &[data-phone="2"] {
+    .phone-btn-inner {
+      transition-delay: 0.1s;
+    }
+  }
+  &[data-phone="3"] {
+    .phone-btn-inner {
+      transition-delay: 0.15s;
+    }
+  }
+  &[data-phone="4"] {
+    .phone-btn-inner {
+      transition-delay: 0.2s;
+    }
+  }
+  &[data-phone="5"] {
+    .phone-btn-inner {
+      transition-delay: 0.25s;
+    }
+  }
+  &[data-phone="6"] {
+    .phone-btn-inner {
+      transition-delay: 0.3s;
+    }
+  }
+  &[data-phone="7"] {
+    .phone-btn-inner {
+      transition-delay: 0.35s;
+    }
+  }
+  &[data-phone="8"] {
+    .phone-btn-inner {
+      transition-delay: 0.4s;
+    }
+  }
+  &[data-phone="9"] {
+    .phone-btn-inner {
+      transition-delay: 0.45s;
+    }
+  }
+  &[data-phone="0"] {
+    .phone-btn-inner {
+      transition-delay: 0.5s;
+    }
+  }
+}
+
+@media screen and (min-aspect-ratio: ~'16/9') {
+  .body-phone-btn-show {
+    .phone-btn-inner-back {
+      border: 0.266666666vh solid #636f79;
+    }
+  }
+  .phone-btn {
+    font-size: 2.84444444444vh;
+    perspective: 17.77777777vh;
+    &:active {
+      .phone-btn-inner-back {
+        box-shadow: inset 0 0.5333333333vh 0.711111111111vh 0 #000;
+        padding-top: 0.5333333333vh;
+      }
+    }
+  }
+  .phone-btn-inner-back {
+    border: 0.266666666vh solid #636f79;
+  }
+}

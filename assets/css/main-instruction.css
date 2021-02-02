@@ -1,0 +1,207 @@
+.main-instruction {
+  position: absolute;
+  left: 5%;
+  top: 2%;
+  background-color: #828282;
+  color: #695a5f;
+  text-transform: uppercase;
+  padding: 0.4% 3.5% 0.5% 1%;
+}
+
+.main-instruction::before {
+  content: '';
+  position: absolute;
+  width: 4%;
+  right: 1%;
+  top: 10%;
+  bottom: 10%;
+  background: #828282;
+  background: linear-gradient(180deg, #828282 17%, #695a5f 17%, #695a5f 19%, #828282 19%, #828282 25%, #695a5f 25%, #695a5f 27%, #828282 27%, #828282 29%, #695a5f 29%, #695a5f 31%, #828282 31%, #828282 33%, #695a5f 33%, #695a5f 35%, #828282 35%, #828282 41%, #695a5f 41%, #695a5f 43%, #828282 43%, #828282 45%, #695a5f 45%, #695a5f 47%, #828282 47%, #828282 53%, #695a5f 53%, #695a5f 55%, #828282 55%, #828282 57%, #695a5f 57%, #695a5f 59%, #828282 59%, #828282 65%, #695a5f 65%, #695a5f 67%, #828282 67%, #828282 69%, #695a5f 69%, #695a5f 71%, #828282 71%, #828282 73%, #695a5f 73%, #695a5f 75%, #828282 75%, #828282 81%, #695a5f 81%, #695a5f 83%, #828282 83%);
+  border-left: 0.2vw solid #695a5f;
+  border-right: 0.2vw solid #695a5f;
+  -o-border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
+  border-image: linear-gradient(to bottom, rgba(105, 90, 95, 0) 0%, #695a5f 17%, #695a5f 83%, rgba(105, 90, 95, 0) 100%) 1 100%;
+}
+
+.main-instruction-title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+.main-instruction-point {
+  margin: 0;
+  font-size: 1.1vw;
+}
+
+.main-instruction-point-numbers {
+  letter-spacing: -0.05em;
+}
+
+.main-instruction-bender::after {
+  content: '';
+  position: relative;
+  width: 0.35vw;
+  height: 0.35vw;
+  background: #636f79;
+  display: inline-block;
+  margin: 0 0 0.3vw 0.3vw;
+  box-shadow: 0.5vw 0 0 #636f79, 1vw 0 0 #695a5f, 1.5vw 0 0 #636f79, 2vw 0 0 #636f79, 2.5vw 0 0 #636f79, 3vw 0 0 #695a5f;
+}
+
+.main-instruction-bottom-block {
+  line-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-instruction-formula {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-transform: none;
+  font-size: 0.9vw;
+}
+
+.main-instruction-formula-col {
+  text-align: center;
+  line-height: 0;
+}
+
+.main-instruction-formula-col:first-child {
+  margin-right: 0.2vw;
+}
+
+.main-instruction-formula-col span {
+  display: block;
+  line-height: 1em;
+}
+
+.main-instruction-formula-col span:first-child {
+  text-decoration: underline;
+  line-height: 1.4em;
+}
+
+.main-instruction-formula-col span sup {
+  font-size: 0.7em;
+}
+
+.main-instruction-icon-arrows {
+  display: inline-flex;
+  position: relative;
+  padding-bottom: 1vw;
+}
+
+.main-instruction-icon-text {
+  text-transform: uppercase;
+  transform: rotate(180deg);
+  font-size: 0.66vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 1em;
+  letter-spacing: 0.08em;
+}
+
+.icon-arrow-left-up,
+.icon-arrow-right-up {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  border-width: 0.3125vw;
+  border-style: solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  margin-left: 0.20833333vw;
+}
+
+.icon-arrow-left-up::before,
+.icon-arrow-right-up::before {
+  content: "";
+  box-sizing: border-box;
+  right: 0;
+  top: -0.15625vw;
+  position: absolute;
+  height: 0.20833333vw;
+  box-shadow: inset 0 0 0 1.66666667vw;
+  transform: rotate(-45deg);
+  width: 0.78125vw;
+  transform-origin: right top;
+}
+
+.icon-arrow-left-up {
+  transform: rotate(-90deg);
+  margin-right: 0.3125vw;
+}
+
+.main-instruction-star {
+  text-shadow: 0.15vw 0 0 #86223c, -0.15vw 0 0 #86223c, 0 0.15vw 0 #86223c, 0 -0.15vw 0 #86223c;
+  font-size: 2vw;
+  color: #828282;
+  transform: rotate(10deg);
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+  .main-instruction::before {
+    border-left: 0.35555556vh solid #695a5f;
+    border-right: 0.35555556vh solid #695a5f;
+  }
+
+  .main-instruction-title {
+    font-size: 2.66666667vh;
+  }
+
+  .main-instruction-point {
+    font-size: 1.95555556vh;
+  }
+
+  .main-instruction-bender::after {
+    width: 0.62222222vh;
+    height: 0.62222222vh;
+    margin: 0 0 0.53333333vh 0.53333333vh;
+    box-shadow: 0.88888889vh 0 0 #636f79, 1.77777778vh 0 0 #695a5f, 2.66666667vh 0 0 #636f79, 3.55555556vh 0 0 #636f79, 4.44444444vh 0 0 #636f79, 5.33333333vh 0 0 #695a5f;
+  }
+
+  .main-instruction-icon-arrows {
+    padding-bottom: 1.77777778vh;
+  }
+
+  .main-instruction-icon-text {
+    font-size: 1.17333333vh;
+  }
+
+  .icon-arrow-left-up,
+  .icon-arrow-right-up {
+    border-width: 0.55555556vh;
+    margin-left: 0.37037037vh;
+  }
+
+  .icon-arrow-left-up::before,
+  .icon-arrow-right-up::before {
+    top: -0.27777778vh;
+    height: 0.37037037vh;
+    box-shadow: inset 0 0 0 2.96296296vh;
+    width: 1.38888889vh;
+  }
+
+  .icon-arrow-left-up {
+    margin-right: 0.55555556vh;
+  }
+
+  .main-instruction-formula {
+    font-size: 1.6vh;
+  }
+
+  .main-instruction-formula-col:first-child {
+    margin-right: 0.35555556vh;
+  }
+
+  .main-instruction-star {
+    text-shadow: 0.26666666vh 0 0 #86223c, -0.26666666vh 0 0 #86223c, 0 0.26666666vh 0 #86223c, 0 -0.26666666vh 0 #86223c;
+    font-size: 3.55555555vh;
+  }
+}
